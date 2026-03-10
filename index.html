@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Świat kostek</title>
+    <link rel="stylesheet" href="bootstrap-5.3.8-dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="style.css">
+    <link rel="shortcut icon" href="img/favicon.png" type="image/x-icon">
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary fixed-top">
+        <div class="container">
+
+            <a class="navbar-brand d-flex align-items-center" href="index.html">
+                <img class="me-2 logo" src="img/logo.png" alt="Logo Świat Kostek">
+                <strong>Świat kostek</strong>
+            </a>
+            
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#nav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="nav">
+                <ul class="navbar-nav ms-auto align-items-lg-center">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Strona główna</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Nowości</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Produkty</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Kontakt</a>
+                    </li>
+
+                    <li class="nav-item ms-lg-3">
+                        <a class="btn btn-light cart" href="#">
+                            <img id="cart-logo" src="img/shopping-cart-icon.png" alt="koszyk">
+                            <span class="badge cart-count">0</span>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <header class="hero text-center">
+        <div class="container">
+            <h1 class="display-4 mb-3">Witaj w Świecie Kostek</h1>
+            <p class="lead">Najlepsze kostki Rubika dla początkujących i speedcuberów</p>
+
+            <div class="search-box">
+                <div class="input-group input-group-lg">
+                    <input type="text" class="form-control" placeholder="Szukaj kostek...">
+                    <button class="btn btn-primary">Szukaj</button>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <section class="py-5">
+        <div class="container">
+            <h2 class="text-center mb-4">Najnowsze promocje!</h2>
+
+            <div id="promoCarousel" class="carousel slide" data-bs-ride="carousel">
+                <div class="carousel-inner">
+                    <div class="carousel-item active">
+                        <div class="row g-4">
+
+                            <div class="col-md-4">
+                                <div class="card position-relative">
+                                    <span class="badge badge-promo">PROMOCJA</span>
+                                    <img src="img/cubes/gan-356-maglev-uv.jpg" alt="card-img-top">
+                                    <div class="card-body">
+                                        <h3 class="h5 card-title">GAN 356</h3>
+                                        <p class="text-danger"><strong>149,99 zł</strong></p>
+                                        <button class="btn btn-primary">Zobacz</button>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-md-4">
+                                <div class="card position-relative">
+                                    <span class="badge badge-promo">PROMOCJA</span>
+                                    <img src="img/cubes/moyu-rs3m-v5-magnetic-3x3x3.jpg" alt="card-img-top">
+                                    <div class="card-body">
+                                        <h3 class="h5 card-title">MoYu RS3M</h3>
+                                        <p class="text-danger"><strong>29,99 zł</strong></p>
+                                        <button class="btn btn-primary">Zobacz</button>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-md-4">
+                                <div class="card position-relative">
+                                    <span class="badge badge-promo">PROMOCJA</span>
+                                    <img src="img/cubes/gan-356-maglev-uv.jpg" alt="card-img-top">
+                                    <div class="card-body">
+                                        <h3 class="h5 card-title">GAN 356</h3>
+                                        <p class="text-danger"><strong>149,99 zł</strong></p>
+                                        <button class="btn btn-primary">Zobacz</button>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                        </div>
+                    </div>
+
+                    <div class="carousel-item">
+                        <div class="row g-4">
+
+                            <div class="col-md-4">
+                                <div class="card">
+                                    <img src="img/cubes/yj-guansu-v2-4x4x4.jpg" alt="card-img-top">
+                                    <div class="card-body">
+                                        <h3 class="h5 card-title">Kostka</h3>
+                                        <p class="text-danger"><strong>50,99 zł</strong></p>
+                                        <button class="btn btn-primary">Zobacz</button>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-md-4">
+                                <div class="card">
+                                    <img src="img/cubes/yj-guansu-v2-4x4x4.jpg" alt="card-img-top">
+                                    <div class="card-body">
+                                        <h3 class="h5 card-title">Kostka</h3>
+                                        <p class="text-danger"><strong>50,99 zł</strong></p>
+                                        <button class="btn btn-primary">Zobacz</button>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-md-4">
+                                <div class="card">
+                                    <img src="img/cubes/yj-guansu-v2-4x4x4.jpg" alt="card-img-top">
+                                    <div class="card-body">
+                                        <h3 class="h5 card-title">Kostka</h3>
+                                        <p class="text-danger"><strong>50,99 zł</strong></p>
+                                        <button class="btn btn-primary">Zobacz</button>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+
+                <button class="carousel-control-prev" type="button" data-bs-target="#promoCarousel" data-bs-slide="prev">
+                    <span class="carousel-control-prev-icon"></span>
+                </button>
+
+                <button class="carousel-control-next" type="button" data-bs-target="#promoCarousel" data-bs-slide="next">
+                    <span class="carousel-control-next-icon"></span>
+                </button>
+
+            </div>
+        </div>
+    </section>
+
+    <section class="py-5 bg-light">
+        <div class="container">
+            <h2 class="text-center mb-4">Popularne kostki</h2>
+            <div class="row g-4">
+
+                <div class="col-md-4">
+                    <div class="card">
+                        <img class="card-img-top" src="img/cubes/moyu-rs3m-v5-magnetic-3x3x3.jpg" alt="MoYu RS3M V5 Magnetic">
+                        <div class="card-body">
+                            <h3 class="h5 card-title">MoYu RS3M V5 Magnetic 3x3x3</h3>
+                            <p class="card-text">Przyjemna kostka dla początkujących speedcuberów</p>
+                            <button class="btn btn-outline-primary">Zobacz</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-4">
+                    <div class="card">
+                        <img class="card-img-top" src="img/cubes/gan-249-v2-2x2x2.jpg" alt="GAN 249 v2">
+                        <div class="card-body">
+                            <h3 class="h5 card-title">GAN 249 v2 2x2x2</h3>
+                            <p class="card-text">Kostka idealna do szybszych czasów w konkurencji 2x2x2</p>
+                            <button class="btn btn-outline-primary">Zobacz</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-4">
+                    <div class="card">
+                        <img class="card-img-top" src="img/cubes/yj-guansu-v2-4x4x4.jpg" alt="YJ GuanSu v2">
+                        <div class="card-body">
+                            <h3 class="h5 card-title">YJ GuanSu v2 4x4x4</h3>
+                            <p class="card-text">Kostka 4x4x4 dla chcących trudnych łamigłówek</p>
+                            <button class="btn btn-outline-primary">Zobacz</button>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <section class="bg-green text-light py-5">
+        <div class="container text-center">
+            <h2>Dołącz do społeczności speedcuberów</h2>
+            <p>Sprawdź nasze poradniki od profesjonalnych speedcuberów i nowości ze świata kostek</p>
+            <button class="btn bg-yellow">Dowiedz się więcej</button>
+        </div>
+    </section>
+
+    <footer class="py-4 text-center bg-primary">
+        <div class="container text-light">
+            <p class="mb-0">Strona utworzona przez: Kacper Majocha 4TP | © 2026 Świat Kostek</p>
+        </div>
+    </footer>
+
+    <script src="bootstrap-5.3.8-dist/js/bootstrap.min.js"></script>
+</body>
+</html>

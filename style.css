@@ -1,0 +1,80 @@
+:root
+{
+    --sk-blue:#0d6efd;
+    --sk-red: #dc3545;
+    --sk-green: #17ac00;
+    --sk-yellow: #e9d900;
+}
+
+.bg-red
+{
+    background: var(--sk-red);
+}
+
+.bg-yellow
+{
+    background: var(--sk-yellow);
+}
+
+.bg-green
+{
+    background: var(--sk-green);
+}
+
+body
+{
+    background-color: white;
+    padding-top: 65px;
+}
+
+.hero
+{
+    background: linear-gradient(135deg, #e9f2ff, #ffffff);
+    padding: 70px 0;
+}
+
+.search-box
+{
+    max-width: 700px;
+    margin: auto;
+}
+
+.card:hover
+{
+    transform: translate(-5px);
+    transition: 0.2s;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+}
+
+.badge-promo
+{
+    background: var(--sk-red);
+    position: absolute;
+    top: 10px;
+    left: 10px;
+}
+
+.cart-count
+{
+    background: var(--sk-red);
+    font-size: 12px;
+    margin-left: 4px;
+}
+
+.logo
+{
+    width: 40px;
+    height: auto;
+}
+
+.cart
+{
+    background: var(--sk-blue);
+    border-width: 0;
+}
+
+#cart-logo
+{
+    width: 30px;
+    height: auto;
+}
