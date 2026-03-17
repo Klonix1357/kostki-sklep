@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Świat Kostek</title>
+    <meta name="robots" content="noindex">
+    <link rel="stylesheet" href="bootstrap-5.3.8-dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/checkout.css">
+    <link rel="shortcut icon" href="img/favicon.png" type="image/x-icon">
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary fixed-top">
+        <div class="container">
+
+            <a class="navbar-brand d-flex align-items-center" href="index.html">
+                <img class="me-2 logo" src="img/logo.png" alt="Logo Świat Kostek">
+                <strong>Świat kostek</strong>
+            </a>
+            
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#nav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="nav">
+                <ul class="navbar-nav ms-auto align-items-lg-center">
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html">Strona główna</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Nowości</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown">Produkty</a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="#">2x2x2</a></li>
+                            <li><a class="dropdown-item" href="#">3x3x3</a></li>
+                            <li><a class="dropdown-item" href="#">4x4x4</a></li>
+                            <li><a class="dropdown-item" href="#">5x5x5</a></li>
+                            <li><a class="dropdown-item" href="#">6x6x6</a></li>
+                            <li><a class="dropdown-item" href="#">7x7x7</a></li>
+                            <li><hr class="dropdown-divider"></li>
+                            <li><a class="dropdown-item" href="#">Pyraminx</a></li>
+                            <li><a class="dropdown-item" href="#">Skewb</a></li>
+                            <li><a class="dropdown-item" href="#">Square-1</a></li>
+                            <li><a class="dropdown-item" href="#">Square-2</a></li>
+                            <li><a class="dropdown-item" href="#">Megaminx</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Kontakt</a>
+                    </li>
+
+                    <li class="nav-item ms-lg-3">
+                        <a class="btn btn-light cart" href="cart.html">
+                            <img id="cart-logo" src="img/shopping-cart-icon.png" alt="koszyk">
+                            <span class="badge cart-count">2</span>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container py-5">
+
+  <h2 class="mb-4">Złóż zamówienie</h2>
+
+  <div class="row g-4">
+
+    <div class="col-lg-8">
+
+      <div class="checkout-card">
+        <h5>Dane kontaktowe</h5>
+
+        <div class="row g-3">
+          <div class="col-md-6">
+            <input type="text" class="form-control" placeholder="Imię">
+          </div>
+
+          <div class="col-md-6">
+            <input type="text" class="form-control" placeholder="Nazwisko">
+          </div>
+
+          <div class="col-12">
+            <input type="email" class="form-control" placeholder="Email">
+          </div>
+
+          <div class="col-12">
+            <input type="tel" class="form-control" placeholder="Telefon">
+          </div>
+        </div>
+      </div>
+
+      <div class="checkout-card">
+        <h5>Adres dostawy</h5>
+
+        <div class="row g-3">
+          <div class="col-12">
+            <input type="text" class="form-control" placeholder="Ulica i numer">
+          </div>
+
+          <div class="col-md-4">
+            <input type="text" class="form-control" placeholder="Kod pocztowy">
+          </div>
+
+          <div class="col-md-8">
+            <input type="text" class="form-control" placeholder="Miasto">
+          </div>
+        </div>
+      </div>
+
+      <div class="checkout-card">
+        <h5>Dostawa</h5>
+
+        <div class="form-check">
+          <input class="form-check-input" type="radio" name="delivery" checked>
+          <label class="form-check-label">
+            Kurier — 15 zł
+          </label>
+        </div>
+
+        <div class="form-check">
+          <input class="form-check-input" type="radio" name="delivery">
+          <label class="form-check-label">
+            Paczkomat — 12 zł
+          </label>
+        </div>
+
+        <div class="form-check">
+          <input class="form-check-input" type="radio" name="delivery">
+          <label class="form-check-label">
+            Odbiór osobisty — 0 zł
+          </label>
+        </div>
+      </div>
+
+      <div class="checkout-card">
+        <h5>Płatność</h5>
+
+        <div class="form-check">
+          <input class="form-check-input" type="radio" name="payment" checked>
+          <label class="form-check-label">
+            BLIK / szybki przelew
+          </label>
+        </div>
+
+        <div class="form-check">
+          <input class="form-check-input" type="radio" name="payment">
+          <label class="form-check-label">
+            Karta płatnicza
+          </label>
+        </div>
+
+        <div class="form-check">
+          <input class="form-check-input" type="radio" name="payment">
+          <label class="form-check-label">
+            Za pobraniem
+          </label>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="col-lg-4">
+
+      <div class="order-summary">
+
+        <h5>Twoje zamówienie</h5>
+
+        <div class="order-item">
+          <span>GAN 356 M x1</span>
+          <span>59 zł</span>
+        </div>
+
+        <div class="order-item">
+          <span>MoYu RS3M x2</span>
+          <span>78 zł</span>
+        </div>
+
+        <hr>
+
+        <div class="order-item">
+          <span>Dostawa</span>
+          <span>15 zł</span>
+        </div>
+
+        <hr>
+
+        <div class="order-total">
+          <span>Razem</span>
+          <span>152 zł</span>
+        </div>
+
+        <button class="btn btn-primary w-100 mt-3">
+          Zamawiam i płacę
+        </button>
+
+      </div>
+
+    </div>
+    </div>
+    </div>
+    
+    <footer class="py-4 text-light bg-dark">
+        <div class="container text-center">
+
+            <div class="mb-3 fs-4">
+                <a href="#" class="text-light me-3">Facebook</a>
+                <a href="#" class="text-light me-3">Instagram</a>
+                <a href="#" class="text-light">Discord</a>
+            </div>
+
+            <div class="mb-2">
+                <a href="#" class="text-light me-3">Regulamin</a>
+                <a href="#" class="text-light me-3">Polityka prywatności</a>
+                <a href="admin-dashboard.html" class="text-light">Panel administracyjny</a>
+            </div>
+
+            <p class="mb-0">Strona utworzona przez: Kacper Majocha 4TP | © 2026 Świat Kostek</p>
+        </div>
+    </footer>
+
+    <script src="bootstrap-5.3.8-dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

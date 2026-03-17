@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>Świat Kostek - Panel administratora</title>
+  <meta name="robots" content="noindex">
+
+  <link rel="stylesheet" href="bootstrap-5.3.8-dist/css/bootstrap.min.css">
+  <link rel="stylesheet" href="css/admin.css">
+  <link rel="shortcut icon" href="img/favicon.png" type="image/x-icon">
+</head>
+<body>
+
+<nav class="navbar navbar-dark bg-dark px-3">
+  <span class="navbar-brand mb-0 h1">
+    Panel administratora — Świat Kostek
+  </span>
+
+  <button class="btn btn-outline-light btn-sm d-lg-none"id="sidebarToggle">☰ Menu</button>
+
+  <button class="btn btn-outline-light btn-sm d-none d-lg-inline" onclick="window.location.href = 'index.html'">
+    Wyloguj
+  </button>
+</nav>
+
+<div class="container-fluid">
+  <div class="row">
+
+    <div class="col-lg-2 sidebar collapse-sidebar" id="sidebar">
+      <h6 class="mt-3">Menu</h6>
+      <a href="admin-dashboard.html" class="sidebar-link active">Dashboard</a>
+      <a href="products-list.html" class="sidebar-link">Towary</a>
+      <a href="#" class="sidebar-link">Zamówienia</a>
+      <a href="#" class="sidebar-link">Użytkownicy</a>
+    </div>
+
+    <div class="col-lg-10 p-4">
+
+      <h3 class="mb-4">Zarządzanie sprzedażą</h3>
+
+      <div class="row g-4">
+
+        <div class="col-md-3">
+          <div class="admin-card">
+            <h6>Dzisiejsza sprzedaż</h6>
+            <h3>7 245 zł</h3>
+          </div>
+        </div>
+
+        <div class="col-md-3">
+          <div class="admin-card">
+            <h6>Zamówienia</h6>
+            <h3>132</h3>
+          </div>
+        </div>
+
+        <div class="col-md-3">
+          <div class="admin-card">
+            <h6>Nowi klienci</h6>
+            <h3>10</h3>
+          </div>
+        </div>
+
+        <div class="col-md-3">
+          <div class="admin-card">
+            <h6>Produkty w magazynie</h6>
+            <h3>188</h3>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<footer class="admin-footer">Strona utworzona przez: Kacper Majocha 4TP | © 2026 Świat Kostek - Panel Administratora</footer>
+
+<script src="bootstrap-5.3.8-dist/js/bootstrap.bundle.min.js"></script>
+<script src="js/admin.js"></script>
+</body>
+</html>

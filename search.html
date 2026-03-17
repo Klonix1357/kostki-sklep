@@ -1,0 +1,369 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Świat Kostek - wyniki wyszukiwania</title>
+    <meta name="robots" content="noindex, follow">
+    <link rel="stylesheet" href="bootstrap-5.3.8-dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/search.css">
+    <link rel="shortcut icon" href="img/favicon.png" type="image/x-icon">
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary fixed-top">
+        <div class="container">
+
+            <a class="navbar-brand d-flex align-items-center" href="index.html">
+                <img class="me-2 logo" src="img/logo.png" alt="Logo Świat Kostek">
+                <strong>Świat kostek</strong>
+            </a>
+            
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#nav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="nav">
+                <ul class="navbar-nav ms-auto align-items-lg-center">
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html">Strona główna</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Nowości</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown">Produkty</a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="#">2x2x2</a></li>
+                            <li><a class="dropdown-item" href="#">3x3x3</a></li>
+                            <li><a class="dropdown-item" href="#">4x4x4</a></li>
+                            <li><a class="dropdown-item" href="#">5x5x5</a></li>
+                            <li><a class="dropdown-item" href="#">6x6x6</a></li>
+                            <li><a class="dropdown-item" href="#">7x7x7</a></li>
+                            <li><hr class="dropdown-divider"></li>
+                            <li><a class="dropdown-item" href="#">Pyraminx</a></li>
+                            <li><a class="dropdown-item" href="#">Skewb</a></li>
+                            <li><a class="dropdown-item" href="#">Square-1</a></li>
+                            <li><a class="dropdown-item" href="#">Square-2</a></li>
+                            <li><a class="dropdown-item" href="#">Megaminx</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Kontakt</a>
+                    </li>
+
+                    <li class="nav-item ms-lg-3">
+                        <a class="btn btn-light cart" href="cart.html">
+                            <img id="cart-logo" src="img/shopping-cart-icon.png" alt="koszyk">
+                            <span class="badge cart-count">2</span>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container py-5">
+
+      <div class="d-flex justify-content-between align-items-center mb-4 flex-wrap">
+        <h2 class="mb-3 mb-md-0">Wyniki wyszukiwania: <span>kostka 3x3x3</span></h2>
+
+        <select class="form-select w-auto">
+          <option>Sortuj: Najpopularniejsze</option>
+          <option>Cena rosnąco</option>
+          <option>Cena malejąco</option>
+          <option>Nowości</option>
+        </select>
+      </div>
+
+      <div class="row g-4">
+
+        <div class="col-lg-3">
+
+          <button class="btn btn-primary w-100 d-lg-none mb-3" data-bs-toggle="collapse" data-bs-target="#filtersPanel">Filtry</button>
+      
+          <div id="filtersPanel"
+               class="filters collapse d-lg-block">
+      
+            <h5>Filtry</h5>
+            <hr>
+      
+            <h6>Typ kostki</h6>
+      
+            <div class="form-check">
+              <input class="form-check-input" type="checkbox" id="3x3">
+              <label class="form-check-label" for="3x3">3x3x3</label>
+            </div>
+        
+            <div class="form-check">
+              <input class="form-check-input" type="checkbox" id="2x2">
+              <label class="form-check-label" for="2x2">2x2x2</label>
+            </div>
+        
+            <div class="form-check">
+              <input class="form-check-input" type="checkbox" id="4x4">
+              <label class="form-check-label" for="4x4">4x4x4</label>
+            </div>
+        
+            <hr>
+        
+            <h6>Zakres cen</h6>
+        
+            <p>Cena od: <span id="minPriceLabel">0 zł</span></p>
+            <input type="range"
+                   class="form-range"
+                   min="0"
+                   max="100"
+                   step="1"
+                   value="0"
+                   oninput="updateMin(this.value)">
+        
+            <p>Cena do: <span id="maxPriceLabel">100 zł</span></p>
+            <input type="range"
+                   class="form-range"
+                   min="0"
+                   max="100"
+                   step="1"
+                   value="100"
+                   oninput="updateMax(this.value)">
+        
+            <button class="btn btn-primary w-100 mt-3">Zastosuj</button>
+        
+          </div>
+        </div>
+
+        <div class="col-lg-9">
+          <div class="row g-4">
+
+            <div class="col-md-4">
+              <div class="product-card position-relative p-3">
+
+                <span class="badge badge-promo">PROMOCJA</span>
+
+                <img src="img/cubes/gan-356-maglev-uv.jpg" class="img-fluid product-img" alt="GAN 356">
+
+                <h6>GAN 356 M</h6>
+
+                <div class="mb-2">
+                  <span class="old-price">89 zł</span>
+                  <span class="price ms-2">59 zł</span>
+                </div>
+
+                <button class="btn btn-outline-primary w-100">Dodaj do koszyka</button>
+
+              </div>
+            </div>
+
+            <div class="col-md-4">
+              <div class="product-card p-3">
+
+                <img src="img/cubes/moyu-rs3m-v5-magnetic-3x3x3.jpg" class="img-fluid product-img" alt="MoYu RS3M">
+
+                <h6>MoYu RS3M 2020</h6>
+
+                <div class="mb-2">
+                  <span class="price">39 zł</span>
+                </div>
+
+                <button class="btn btn-outline-primary w-100">Dodaj do koszyka</button>
+
+              </div>
+            </div>
+
+            <div class="col-md-4">
+              <div class="product-card p-3">
+
+                <img src="img/cubes/gan-356-maglev-uv.jpg" class="img-fluid product-img" alt="QiYi Warrior">
+
+                <h6>QiYi Warrior W</h6>
+
+                <div class="mb-2">
+                  <span class="price">29 zł</span>
+                </div>
+
+                <button class="btn btn-outline-primary w-100">Dodaj do koszyka</button>
+
+              </div>
+            </div>
+
+            <div class="col-md-4">
+              <div class="product-card position-relative p-3">
+
+                <span class="badge badge-promo">PROMOCJA</span>
+
+                <img src="img/cubes/gan-356-maglev-uv.jpg" class="img-fluid product-img" alt="GAN 356">
+
+                <h6>GAN 356 M</h6>
+
+                <div class="mb-2">
+                  <span class="old-price">89 zł</span>
+                  <span class="price ms-2">59 zł</span>
+                </div>
+
+                <button class="btn btn-outline-primary w-100">Dodaj do koszyka</button>
+
+              </div>
+            </div>
+
+            <div class="col-md-4">
+              <div class="product-card p-3">
+
+                <img src="img/cubes/moyu-rs3m-v5-magnetic-3x3x3.jpg" class="img-fluid product-img" alt="MoYu RS3M">
+
+                <h6>MoYu RS3M 2020</h6>
+
+                <div class="mb-2">
+                  <span class="price">39 zł</span>
+                </div>
+
+                <button class="btn btn-outline-primary w-100">Dodaj do koszyka</button>
+
+              </div>
+            </div>
+
+            <div class="col-md-4">
+              <div class="product-card p-3">
+
+                <img src="img/cubes/gan-356-maglev-uv.jpg" class="img-fluid product-img" alt="QiYi Warrior">
+
+                <h6>QiYi Warrior W</h6>
+
+                <div class="mb-2">
+                  <span class="price">29 zł</span>
+                </div>
+
+                <button class="btn btn-outline-primary w-100">Dodaj do koszyka</button>
+
+              </div>
+            </div>
+
+            <div class="col-md-4">
+              <div class="product-card position-relative p-3">
+
+                <span class="badge badge-promo">PROMOCJA</span>
+
+                <img src="img/cubes/gan-356-maglev-uv.jpg" class="img-fluid product-img" alt="GAN 356">
+
+                <h6>GAN 356 M</h6>
+
+                <div class="mb-2">
+                  <span class="old-price">89 zł</span>
+                  <span class="price ms-2">59 zł</span>
+                </div>
+
+                <button class="btn btn-outline-primary w-100">Dodaj do koszyka</button>
+
+              </div>
+            </div>
+
+            <div class="col-md-4">
+              <div class="product-card p-3">
+
+                <img src="img/cubes/moyu-rs3m-v5-magnetic-3x3x3.jpg" class="img-fluid product-img" alt="MoYu RS3M">
+
+                <h6>MoYu RS3M 2020</h6>
+
+                <div class="mb-2">
+                  <span class="price">39 zł</span>
+                </div>
+
+                <button class="btn btn-outline-primary w-100">Dodaj do koszyka</button>
+
+              </div>
+            </div>
+
+            <div class="col-md-4">
+              <div class="product-card p-3">
+
+                <img src="img/cubes/gan-356-maglev-uv.jpg" class="img-fluid product-img" alt="QiYi Warrior">
+
+                <h6>QiYi Warrior W</h6>
+
+                <div class="mb-2">
+                  <span class="price">29 zł</span>
+                </div>
+
+                <button class="btn btn-outline-primary w-100">Dodaj do koszyka</button>
+
+              </div>
+            </div>
+
+            <div class="col-md-4">
+              <div class="product-card position-relative p-3">
+
+                <span class="badge badge-promo">PROMOCJA</span>
+
+                <img src="img/cubes/gan-356-maglev-uv.jpg" class="img-fluid product-img" alt="GAN 356">
+
+                <h6>GAN 356 M</h6>
+
+                <div class="mb-2">
+                  <span class="old-price">89 zł</span>
+                  <span class="price ms-2">59 zł</span>
+                </div>
+
+                <button class="btn btn-outline-primary w-100">Dodaj do koszyka</button>
+
+              </div>
+            </div>
+
+            <div class="col-md-4">
+              <div class="product-card p-3">
+
+                <img src="img/cubes/moyu-rs3m-v5-magnetic-3x3x3.jpg" class="img-fluid product-img" alt="MoYu RS3M">
+
+                <h6>MoYu RS3M 2020</h6>
+
+                <div class="mb-2">
+                  <span class="price">39 zł</span>
+                </div>
+
+                <button class="btn btn-outline-primary w-100">Dodaj do koszyka</button>
+
+              </div>
+            </div>
+
+            <div class="col-md-4">
+              <div class="product-card p-3">
+
+                <img src="img/cubes/gan-356-maglev-uv.jpg" class="img-fluid product-img" alt="QiYi Warrior">
+
+                <h6>QiYi Warrior W</h6>
+
+                <div class="mb-2">
+                  <span class="price">29 zł</span>
+                </div>
+
+                <button class="btn btn-outline-primary w-100">Dodaj do koszyka</button>
+
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <footer class="py-4 text-light bg-dark">
+        <div class="container text-center">
+
+            <div class="mb-3 fs-4">
+                <a href="#" class="text-light me-3">Facebook</a>
+                <a href="#" class="text-light me-3">Instagram</a>
+                <a href="#" class="text-light">Discord</a>
+            </div>
+
+            <div class="mb-2">
+                <a href="#" class="text-light me-3">Regulamin</a>
+                <a href="#" class="text-light me-3">Polityka prywatności</a>
+                <a href="admin-dashboard.html" class="text-light">Panel administracyjny</a>
+            </div>
+
+            <p class="mb-0">Strona utworzona przez: Kacper Majocha 4TP | © 2026 Świat Kostek</p>
+        </div>
+    </footer>
+
+    <script src="bootstrap-5.3.8-dist/js/bootstrap.bundle.min.js"></script>
+    <script src="js/search.js"></script>
+</body>
+</html>

@@ -24,13 +24,14 @@
 body
 {
     background-color: white;
-    padding-top: 65px;
+    padding-top: 80px;
 }
 
 .hero
 {
-    background: linear-gradient(135deg, #e9f2ff, #ffffff);
-    padding: 70px 0;
+    /* background: linear-gradient(135deg, #e9f2ff, #ffffff); */
+    padding: 50px 0;
+    text-align: center;
 }
 
 .search-box
@@ -77,4 +78,49 @@ body
 {
     width: 30px;
     height: auto;
+}
+
+.promo-section
+{
+    background:#F8F9FA;
+    padding: 30px 0;
+}
+
+.promo-banner
+{
+    border-radius: 15px;
+    overflow: hidden;
+}
+
+.promo-banner img
+{
+    width: 100%;
+    height: auto;
+    display :block;
+}
+
+.category-card
+{
+    padding:25px;
+    text-align:center;
+    border-radius:12px;
+    background:white;
+    transition:0.2s;
+    box-shadow:0 5px 15px rgba(0,0,0,0.05);
+    text-decoration:none;
+    color:inherit;
+    display:block;
+}
+
+.category-card:hover
+{
+    transform:translateY(-5px);
+    box-shadow:0 10px 25px rgba(0,0,0,0.1);
+}
+
+.category-icon
+{
+    height:80px;
+    margin-bottom:10px;
+    object-fit:contain;
 }
