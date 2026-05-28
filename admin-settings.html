@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Ustawienia - Panel administratora - Świat Kostek</title>
+    <meta name="robots" content="noindex">
+    <link rel="stylesheet" href="bootstrap-5.3.8-dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/admin.css">
+    <link rel="shortcut icon" href="img/favicon.png" type="image/x-icon">
+</head>
+<body>
+
+    <header class="topbar">
+        <div class="topbar-left">
+            <a class="topbar-brand" href="admin-dashboard.html">
+                <span class="topbar-brand-text">Świat <span>Kostek</span></span>
+            </a>
+            <button class="btn-toggle" id="sidebarToggle" aria-label="Menu">☰</button>
+        </div>
+        <div class="topbar-right">
+            <button class="topbar-badge" aria-label="Powiadomienia">🔔<span class="dot"></span></button>
+            <div class="topbar-avatar">A</div>
+            <button class="btn-logout" onclick="window.location.href='index.html'">Wyloguj</button>
+        </div>
+    </header>
+
+    <div class="sidebar-overlay" id="sidebarOverlay"></div>
+
+    <nav class="sidebar" id="adminSidebar">
+        <span class="nav-group-label">Główne</span>
+        <a class="nav-link" href="admin-dashboard.html"><span class="nav-icon">📊</span> Dashboard</a>
+        <div class="nav-divider"></div>
+        <span class="nav-group-label">Sklep</span>
+        <a class="nav-link" href="products-list.html"><span class="nav-icon">📦</span> Towary</a>
+        <a class="nav-link" href="admin-orders.html"><span class="nav-icon">🛒</span> Zamówienia <span class="badge-count">8</span></a>
+        <a class="nav-link" href="admin-users.html"><span class="nav-icon">👥</span> Użytkownicy</a>
+        <a class="nav-link" href="admin-categories.html"><span class="nav-icon">🗂️</span> Kategorie</a>
+        <div class="nav-divider"></div>
+        <span class="nav-group-label">Ustawienia</span>
+        <a class="nav-link active" href="admin-settings.html"><span class="nav-icon">⚙️</span> Ustawienia</a>
+    </nav>
+
+    <main class="main-content">
+        <div class="page-header">
+            <div>
+                <p class="breadcrumb">Panel administracyjny › <span>Ustawienia</span></p>
+                <h1>Ustawienia sklepu</h1>
+            </div>
+        </div>
+
+        <div class="row g-3">
+            <div class="col-lg-8">
+
+                <!-- Dane sklepu -->
+                <div class="card mb-3">
+                    <div class="card-header"><h5>🏪 Dane sklepu</h5></div>
+                    <div class="card-body">
+                        <div class="row g-3">
+                            <div class="col-md-6">
+                                <label class="form-label" for="shopName">Nazwa sklepu</label>
+                                <input type="text" id="shopName" class="form-control" value="Świat Kostek">
+                            </div>
+                            <div class="col-md-6">
+                                <label class="form-label" for="shopEmail">E-mail kontaktowy</label>
+                                <input type="email" id="shopEmail" class="form-control" value="kontakt@swiat-kostek.pl">
+                            </div>
+                            <div class="col-md-6">
+                                <label class="form-label" for="shopPhone">Telefon</label>
+                                <input type="tel" id="shopPhone" class="form-control" value="+48 123 456 789">
+                            </div>
+                            <div class="col-md-6">
+                                <label class="form-label" for="shopNip">NIP</label>
+                                <input type="text" id="shopNip" class="form-control" value="123-456-78-90">
+                            </div>
+                            <div class="col-12">
+                                <label class="form-label" for="shopAddress">Adres</label>
+                                <input type="text" id="shopAddress" class="form-control" value="ul. Rubika 3, 00-001 Warszawa">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Dostawa -->
+                <div class="card mb-3">
+                    <div class="card-header"><h5>🚚 Koszty dostawy</h5></div>
+                    <div class="card-body">
+                        <div class="row g-3">
+                            <div class="col-md-4">
+                                <label class="form-label">Kurier (zł)</label>
+                                <input type="number" class="form-control" value="15" min="0" step="0.01">
+                            </div>
+                            <div class="col-md-4">
+                                <label class="form-label">Paczkomat (zł)</label>
+                                <input type="number" class="form-control" value="12" min="0" step="0.01">
+                            </div>
+                            <div class="col-md-4">
+                                <label class="form-label">Odbiór osobisty (zł)</label>
+                                <input type="number" class="form-control" value="0" min="0" step="0.01">
+                            </div>
+                            <div class="col-md-6">
+                                <label class="form-label">Darmowa dostawa od (zł)</label>
+                                <input type="number" class="form-control" value="150" min="0" step="1">
+                                <span class="form-text">Ustaw 0 aby wyłączyć.</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Powiadomienia e-mail -->
+                <div class="card mb-3">
+                    <div class="card-header"><h5>📧 Powiadomienia e-mail</h5></div>
+                    <div class="card-body">
+                        <div class="mb-2 d-flex justify-content-between align-items-center">
+                            <div>
+                                <strong style="font-size:.9rem;">Nowe zamówienie</strong>
+                                <p class="form-text mb-0">Wyślij e-mail przy każdym nowym zamówieniu</p>
+                            </div>
+                            <div class="form-check form-switch">
+                                <input class="form-check-input" type="checkbox" checked style="width:2.5em;height:1.3em;">
+                            </div>
+                        </div>
+                        <hr style="border-color:var(--border);">
+                        <div class="mb-2 d-flex justify-content-between align-items-center">
+                            <div>
+                                <strong style="font-size:.9rem;">Niski stan magazynowy</strong>
+                                <p class="form-text mb-0">Powiadom gdy produkt ma mniej niż 5 sztuk</p>
+                            </div>
+                            <div class="form-check form-switch">
+                                <input class="form-check-input" type="checkbox" checked style="width:2.5em;height:1.3em;">
+                            </div>
+                        </div>
+                        <hr style="border-color:var(--border);">
+                        <div class="d-flex justify-content-between align-items-center">
+                            <div>
+                                <strong style="font-size:.9rem;">Rejestracja klienta</strong>
+                                <p class="form-text mb-0">Powiadom o nowym koncie</p>
+                            </div>
+                            <div class="form-check form-switch">
+                                <input class="form-check-input" type="checkbox" style="width:2.5em;height:1.3em;">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <button class="btn btn-primary btn-lg">Zapisz ustawienia</button>
+
+            </div>
+
+            <!-- Panel boczny -->
+            <div class="col-lg-4">
+
+                <!-- Zmiana hasła -->
+                <div class="card mb-3">
+                    <div class="card-header"><h5>🔐 Konto administratora</h5></div>
+                    <div class="card-body">
+                        <div class="mb-3">
+                            <label class="form-label">Login</label>
+                            <input type="text" class="form-control" value="admin">
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label">Nowe hasło</label>
+                            <input type="password" class="form-control" placeholder="Zostaw puste, aby nie zmieniać">
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label">Potwierdź nowe hasło</label>
+                            <input type="password" class="form-control" placeholder="Powtórz nowe hasło">
+                        </div>
+                        <button class="btn btn-secondary w-100">Zmień hasło</button>
+                    </div>
+                </div>
+
+                <!-- Informacje o systemie -->
+                <div class="card">
+                    <div class="card-header"><h5>ℹ️ Informacje o systemie</h5></div>
+                    <div class="card-body" style="font-size:.85rem;">
+                        <div class="d-flex justify-content-between mb-2">
+                            <span style="color:var(--muted);">Wersja panelu</span>
+                            <strong>1.0.0</strong>
+                        </div>
+                        <div class="d-flex justify-content-between mb-2">
+                            <span style="color:var(--muted);">Bootstrap</span>
+                            <strong>5.3.8</strong>
+                        </div>
+                        <div class="d-flex justify-content-between">
+                            <span style="color:var(--muted);">Ostatnia aktualizacja</span>
+                            <strong>27.05.2026</strong>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </main>
+
+    <footer class="admin-footer">
+        Strona utworzona przez: Kacper Majocha 4TP &nbsp;|&nbsp; © 2026 Świat Kostek - Panel Administratora
+    </footer>
+
+    <script src="bootstrap-5.3.8-dist/js/bootstrap.bundle.min.js"></script>
+    <script src="js/admin.js"></script>
+</body>
+</html>

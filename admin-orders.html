@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Zamówienia - Panel administratora - Świat Kostek</title>
+    <meta name="robots" content="noindex">
+    <link rel="stylesheet" href="bootstrap-5.3.8-dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/admin.css">
+    <link rel="shortcut icon" href="img/favicon.png" type="image/x-icon">
+</head>
+<body>
+
+    <header class="topbar">
+        <div class="topbar-left">
+            <a class="topbar-brand" href="admin-dashboard.html">
+                <span class="topbar-brand-text">Świat <span>Kostek</span></span>
+            </a>
+            <button class="btn-toggle" id="sidebarToggle" aria-label="Menu">☰</button>
+        </div>
+        <div class="topbar-right">
+            <button class="topbar-badge" aria-label="Powiadomienia">🔔<span class="dot"></span></button>
+            <div class="topbar-avatar">A</div>
+            <button class="btn-logout" onclick="window.location.href='index.html'">Wyloguj</button>
+        </div>
+    </header>
+
+    <div class="sidebar-overlay" id="sidebarOverlay"></div>
+
+    <nav class="sidebar" id="adminSidebar">
+        <span class="nav-group-label">Główne</span>
+        <a class="nav-link" href="admin-dashboard.html"><span class="nav-icon">📊</span> Dashboard</a>
+        <div class="nav-divider"></div>
+        <span class="nav-group-label">Sklep</span>
+        <a class="nav-link" href="products-list.html"><span class="nav-icon">📦</span> Towary</a>
+        <a class="nav-link active" href="admin-orders.html"><span class="nav-icon">🛒</span> Zamówienia <span class="badge-count">8</span></a>
+        <a class="nav-link" href="admin-users.html"><span class="nav-icon">👥</span> Użytkownicy</a>
+        <a class="nav-link" href="admin-categories.html"><span class="nav-icon">🗂️</span> Kategorie</a>
+        <div class="nav-divider"></div>
+        <span class="nav-group-label">Ustawienia</span>
+        <a class="nav-link" href="admin-settings.html"><span class="nav-icon">⚙️</span> Ustawienia</a>
+    </nav>
+
+    <main class="main-content">
+        <div class="page-header">
+            <div>
+                <p class="breadcrumb">Panel administracyjny › <span>Zamówienia</span></p>
+                <h1>Zamówienia</h1>
+            </div>
+        </div>
+
+        <!-- Statystyki zamówień -->
+        <div class="row g-3 mb-4">
+            <div class="col-6 col-md-3">
+                <div class="stat-card">
+                    <div class="stat-icon blue">🆕</div>
+                    <div>
+                        <span class="stat-label">Nowe</span>
+                        <div class="stat-value">8</div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-6 col-md-3">
+                <div class="stat-card">
+                    <div class="stat-icon yellow">⚙️</div>
+                    <div>
+                        <span class="stat-label">W realizacji</span>
+                        <div class="stat-value">14</div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-6 col-md-3">
+                <div class="stat-card">
+                    <div class="stat-icon purple">📬</div>
+                    <div>
+                        <span class="stat-label">Wysłane</span>
+                        <div class="stat-value">22</div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-6 col-md-3">
+                <div class="stat-card">
+                    <div class="stat-icon green">✅</div>
+                    <div>
+                        <span class="stat-label">Dostarczone dziś</span>
+                        <div class="stat-value">88</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Lista zamówień -->
+        <div class="card">
+            <div class="card-header">
+                <div class="table-search">
+                    <input type="text" placeholder="🔍  Szukaj (nr, klient, email)…" style="min-width:240px;">
+                    <select>
+                        <option>Wszystkie statusy</option>
+                        <option>Nowe</option>
+                        <option>W realizacji</option>
+                        <option>Wysłane</option>
+                        <option>Dostarczone</option>
+                        <option>Anulowane</option>
+                    </select>
+                    <input type="date" title="Data od">
+                    <input type="date" title="Data do">
+                </div>
+                <span style="color:var(--muted);font-size:.82rem;">Łącznie: 132 zamówień</span>
+            </div>
+
+            <div style="overflow-x:auto;">
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th>Nr</th>
+                            <th>Klient</th>
+                            <th>Data</th>
+                            <th>Produkty</th>
+                            <th>Kwota</th>
+                            <th>Dostawa</th>
+                            <th>Status</th>
+                            <th>Akcje</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>#1042</strong></td>
+                            <td>
+                                <div class="d-flex align-items-center gap-2">
+                                    <div class="user-avatar">AK</div>
+                                    <div>
+                                        <div style="font-weight:600;font-size:.88rem;">Anna Kowalska</div>
+                                        <div style="color:var(--muted);font-size:.75rem;">anna.k@mail.pl</div>
+                                    </div>
+                                </div>
+                            </td>
+                            <td style="font-size:.82rem;">27.05.2026<br>10:14</td>
+                            <td style="font-size:.82rem;">GAN 356 M ×1<br>MoYu RS3M ×1</td>
+                            <td><strong>98 zł</strong></td>
+                            <td style="font-size:.82rem;">Kurier</td>
+                            <td><span class="status nowe">Nowe</span></td>
+                            <td class="d-flex gap-1 flex-wrap">
+                                <button class="btn-action view">👁 Szczegóły</button>
+                                <button class="btn-action edit">⚙️ Status</button>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><strong>#1041</strong></td>
+                            <td>
+                                <div class="d-flex align-items-center gap-2">
+                                    <div class="user-avatar">PN</div>
+                                    <div>
+                                        <div style="font-weight:600;font-size:.88rem;">Piotr Nowak</div>
+                                        <div style="color:var(--muted);font-size:.75rem;">p.nowak@mail.pl</div>
+                                    </div>
+                                </div>
+                            </td>
+                            <td style="font-size:.82rem;">27.05.2026<br>09:02</td>
+                            <td style="font-size:.82rem;">GAN 356 M ×2<br>GAN 249 V2 ×1</td>
+                            <td><strong>167 zł</strong></td>
+                            <td style="font-size:.82rem;">Paczkomat</td>
+                            <td><span class="status w-realizacji">W realizacji</span></td>
+                            <td class="d-flex gap-1 flex-wrap">
+                                <button class="btn-action view">👁 Szczegóły</button>
+                                <button class="btn-action edit">⚙️ Status</button>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><strong>#1040</strong></td>
+                            <td>
+                                <div class="d-flex align-items-center gap-2">
+                                    <div class="user-avatar">MW</div>
+                                    <div>
+                                        <div style="font-weight:600;font-size:.88rem;">Marta Wiśniewska</div>
+                                        <div style="color:var(--muted);font-size:.75rem;">mwis@mail.pl</div>
+                                    </div>
+                                </div>
+                            </td>
+                            <td style="font-size:.82rem;">26.05.2026<br>18:45</td>
+                            <td style="font-size:.82rem;">GAN 249 V2 ×1</td>
+                            <td><strong>49 zł</strong></td>
+                            <td style="font-size:.82rem;">Paczkomat</td>
+                            <td><span class="status wysłane">Wysłane</span></td>
+                            <td class="d-flex gap-1 flex-wrap">
+                                <button class="btn-action view">👁 Szczegóły</button>
+                                <button class="btn-action edit">⚙️ Status</button>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><strong>#1039</strong></td>
+                            <td>
+                                <div class="d-flex align-items-center gap-2">
+                                    <div class="user-avatar">TZ</div>
+                                    <div>
+                                        <div style="font-weight:600;font-size:.88rem;">Tomasz Zając</div>
+                                        <div style="color:var(--muted);font-size:.75rem;">t.zajac@mail.pl</div>
+                                    </div>
+                                </div>
+                            </td>
+                            <td style="font-size:.82rem;">26.05.2026<br>15:30</td>
+                            <td style="font-size:.82rem;">MoYu RS3M ×2<br>QiYi Warrior ×1<br>+2 inne</td>
+                            <td><strong>210 zł</strong></td>
+                            <td style="font-size:.82rem;">Kurier</td>
+                            <td><span class="status dostarczone">Dostarczone</span></td>
+                            <td class="d-flex gap-1 flex-wrap">
+                                <button class="btn-action view">👁 Szczegóły</button>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><strong>#1038</strong></td>
+                            <td>
+                                <div class="d-flex align-items-center gap-2">
+                                    <div class="user-avatar">KM</div>
+                                    <div>
+                                        <div style="font-weight:600;font-size:.88rem;">Karolina Maj</div>
+                                        <div style="color:var(--muted);font-size:.75rem;">k.maj@mail.pl</div>
+                                    </div>
+                                </div>
+                            </td>
+                            <td style="font-size:.82rem;">25.05.2026<br>12:00</td>
+                            <td style="font-size:.82rem;">MoYu RS3M ×1</td>
+                            <td><strong>39 zł</strong></td>
+                            <td style="font-size:.82rem;">Odbiór osobisty</td>
+                            <td><span class="status anulowane">Anulowane</span></td>
+                            <td class="d-flex gap-1 flex-wrap">
+                                <button class="btn-action view">👁 Szczegóły</button>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="card-header" style="border-top:1px solid var(--border);border-bottom:none;justify-content:space-between;">
+                <span style="color:var(--muted);font-size:.82rem;">Wyświetlono 5 z 132</span>
+                <nav aria-label="Paginacja zamówień">
+                    <ul class="pagination mb-0">
+                        <li class="page-item disabled"><a class="page-link" href="#">   </a></li>
+                        <li class="page-item active"><a class="page-link" href="#">1</a></li>
+                        <li class="page-item"><a class="page-link" href="#">2</a></li>
+                        <li class="page-item"><a class="page-link" href="#">3</a></li>
+                        <li class="page-item"><a class="page-link" href="#">…</a></li>
+                        <li class="page-item"><a class="page-link" href="#">27</a></li>
+                        <li class="page-item"><a class="page-link" href="#">›</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+
+    </main>
+
+    <footer class="admin-footer">
+        Strona utworzona przez: Kacper Majocha 4TP &nbsp;|&nbsp; © 2026 Świat Kostek - Panel Administratora
+    </footer>
+
+    <script src="bootstrap-5.3.8-dist/js/bootstrap.bundle.min.js"></script>
+    <script src="js/admin.js"></script>
+</body>
+</html>

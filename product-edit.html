@@ -1,82 +1,164 @@
 <!DOCTYPE html>
 <html lang="pl">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-
-  <title>Świat Kostek - panel administratora - edytuj produkt</title>
-  <meta name="robots" content="noindex">
-
-  <link rel="stylesheet" href="bootstrap-5.3.8-dist/css/bootstrap.min.css">
-  <link rel="stylesheet" href="css/admin.css">
-  <link rel="shortcut icon" href="img/favicon.png" type="image/x-icon">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Edytuj produkt - Panel administratora - Świat Kostek</title>
+    <meta name="robots" content="noindex">
+    <link rel="stylesheet" href="bootstrap-5.3.8-dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/admin.css">
+    <link rel="shortcut icon" href="img/favicon.png" type="image/x-icon">
 </head>
 <body>
 
-<nav class="navbar navbar-dark bg-dark px-3">
-  <span class="navbar-brand mb-0 h1">
-    Panel administratora — Świat Kostek
-  </span>
+    <header class="topbar">
+        <div class="topbar-left">
+            <a class="topbar-brand" href="admin-dashboard.html">
+                <span class="topbar-brand-text">Świat <span>Kostek</span></span>
+            </a>
+            <button class="btn-toggle" id="sidebarToggle" aria-label="Menu">☰</button>
+        </div>
+        <div class="topbar-right">
+            <button class="topbar-badge" aria-label="Powiadomienia">🔔<span class="dot"></span></button>
+            <div class="topbar-avatar">A</div>
+            <button class="btn-logout" onclick="window.location.href='index.html'">Wyloguj</button>
+        </div>
+    </header>
 
-  <button class="btn btn-outline-light btn-sm d-lg-none"id="sidebarToggle">☰ Menu</button>
+    <div class="sidebar-overlay" id="sidebarOverlay"></div>
 
-  <button class="btn btn-outline-light btn-sm d-none d-lg-inline" onclick="window.location.href = 'index.html'">
-    Wyloguj
-  </button>
-</nav>
+    <nav class="sidebar" id="adminSidebar">
+        <span class="nav-group-label">Główne</span>
+        <a class="nav-link" href="admin-dashboard.html"><span class="nav-icon">📊</span> Dashboard</a>
+        <div class="nav-divider"></div>
+        <span class="nav-group-label">Sklep</span>
+        <a class="nav-link active" href="products-list.html"><span class="nav-icon">📦</span> Towary</a>
+        <a class="nav-link" href="admin-orders.html"><span class="nav-icon">🛒</span> Zamówienia <span class="badge-count">8</span></a>
+        <a class="nav-link" href="admin-users.html"><span class="nav-icon">👥</span> Użytkownicy</a>
+        <a class="nav-link" href="admin-categories.html"><span class="nav-icon">🗂️</span> Kategorie</a>
+        <div class="nav-divider"></div>
+        <span class="nav-group-label">Ustawienia</span>
+        <a class="nav-link" href="admin-settings.html"><span class="nav-icon">⚙️</span> Ustawienia</a>
+    </nav>
 
-<div class="container-fluid">
-  <div class="row">
+    <main class="main-content">
+        <div class="page-header">
+            <div>
+                <p class="breadcrumb">
+                    Panel administracyjny ›
+                    <a href="products-list.html">Towary</a> ›
+                    <span>Edytuj: GAN 356 M</span>
+                </p>
+                <h1>Edytuj produkt #1</h1>
+            </div>
+            <a href="products-list.html" class="btn btn-secondary">← Wróć do listy</a>
+        </div>
 
-    <div class="col-lg-2 sidebar collapse-sidebar" id="sidebar">
-      <h6 class="mt-3">Menu</h6>
-      <a href="admin-dashboard.html" class="sidebar-link">Dashboard</a>
-      <a href="products-list.html" class="sidebar-link active">Towary</a>
-      <a href="#" class="sidebar-link">Zamówienia</a>
-      <a href="#" class="sidebar-link">Użytkownicy</a>
-    </div>
+        <div class="row g-3">
 
-    <div class="col-lg-10 p-4">
-      <h3 class="mb-4">Edytuj produkt</h3>
-      <div class="admin-card p-4">
-        <form class="admin-form">
-          <div class="mb-3">
-            <label for="productName" class="form-label">Nazwa produktu</label>
-            <input type="text" id="productName" class="form-control" value="GAN 356 M">
-          </div>
-      
-          <div class="mb-3">
-            <label for="productDescription" class="form-label">Opis</label>
-            <textarea id="productDescription" class="form-control">Profesjonalna kostka speedcube</textarea>
-          </div>
-      
-          <div class="mb-3">
-            <label for="productPrice" class="form-label">Cena (zł)</label>
-            <input type="number" id="productPrice" class="form-control" value="59">
-          </div>
-      
-          <div class="mb-3">
-            <label for="productStock" class="form-label">Stan magazynowy</label>
-            <input type="number" id="productStock" class="form-control" value="42">
-          </div>
-      
-          <div class="mb-3">
-            <label for="productImage" class="form-label">Zdjęcie produktu</label>
-            <input type="file" id="productImage" class="form-control">
-          </div>
-      
-          <button class="btn btn-primary mt-3">
-            Zapisz zmiany
-          </button>
-        </form>
-      </div>
-    </div>
-  </div>
-</div>
+            <div class="col-lg-8">
+                <div class="card mb-3">
+                    <div class="card-header"><h5>Podstawowe informacje</h5></div>
+                    <div class="card-body">
+                        <div class="mb-3">
+                            <label class="form-label" for="productName">Nazwa produktu *</label>
+                            <input type="text" id="productName" class="form-control" value="GAN 356 M">
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label" for="productDescription">Opis produktu</label>
+                            <textarea id="productDescription" class="form-control" rows="5">Profesjonalna kostka speedcube 3×3×3 z systemem Maglev. Idealna dla zawodowców i ambitnych amatorów speedcubingu.</textarea>
+                        </div>
+                        <div class="row g-3">
+                            <div class="col-md-6">
+                                <label class="form-label" for="productPrice">Cena (zł) *</label>
+                                <input type="number" id="productPrice" class="form-control" value="59" min="0" step="0.01">
+                            </div>
+                            <div class="col-md-6">
+                                <label class="form-label" for="productOldPrice">Cena przed promocją (zł)</label>
+                                <input type="number" id="productOldPrice" class="form-control" value="89" min="0" step="0.01">
+                            </div>
+                        </div>
+                    </div>
+                </div>
 
-<footer class="admin-footer">Strona utworzona przez: Kacper Majocha 4TP | © 2026 Świat Kostek - Panel Administratora</footer>
+                <div class="card">
+                    <div class="card-header"><h5>Zdjęcie produktu</h5></div>
+                    <div class="card-body">
+                        <div class="mb-3">
+                            <img src="img/cubes/gan-356-maglev-uv.jpg"
+                                 alt="Aktualne zdjęcie produktu"
+                                 style="height:120px;object-fit:contain;border-radius:8px;background:var(--bg-body);padding:8px;">
+                            <p class="form-text mt-1">Aktualne zdjęcie</p>
+                        </div>
+                        <label class="form-label" for="productImage">Zmień zdjęcie</label>
+                        <input type="file" id="productImage" class="form-control" accept="image/*">
+                        <span class="form-text">Zalecany rozmiar: 800×800 px. Maks. 2 MB.</span>
+                    </div>
+                </div>
+            </div>
 
-<script src="bootstrap-5.3.8-dist/js/bootstrap.bundle.min.js"></script>
-<script src="js/admin.js"></script>
+            <div class="col-lg-4">
+                <div class="card mb-3">
+                    <div class="card-header"><h5>Organizacja</h5></div>
+                    <div class="card-body">
+                        <div class="mb-3">
+                            <label class="form-label" for="productCategory">Kategoria *</label>
+                            <select id="productCategory" class="form-select">
+                                <option>2×2×2</option>
+                                <option selected>3×3×3</option>
+                                <option>4×4×4</option>
+                                <option>5×5×5</option>
+                                <option>6×6×6</option>
+                                <option>7×7×7</option>
+                                <option>Pyraminx</option>
+                                <option>Skewb</option>
+                                <option>Square-1</option>
+                                <option>Megaminx</option>
+                            </select>
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label" for="productBrand">Marka</label>
+                            <select id="productBrand" class="form-select">
+                                <option selected>GAN</option>
+                                <option>MoYu</option>
+                                <option>QiYi</option>
+                                <option>YJ</option>
+                                <option>DaYan</option>
+                            </select>
+                        </div>
+                        <div class="mb-0">
+                            <label class="form-label" for="productStatus">Status</label>
+                            <select id="productStatus" class="form-select">
+                                <option value="aktywny" selected>Aktywny</option>
+                                <option value="ukryty">Ukryty</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card mb-3">
+                    <div class="card-header"><h5>Magazyn</h5></div>
+                    <div class="card-body">
+                        <label class="form-label" for="productStock">Stan magazynowy *</label>
+                        <input type="number" id="productStock" class="form-control" value="42" min="0">
+                    </div>
+                </div>
+
+                <div class="d-grid gap-2">
+                    <button class="btn btn-primary btn-lg">Zapisz zmiany</button>
+                    <button class="btn btn-danger">Usuń produkt</button>
+                    <a href="products-list.html" class="btn btn-secondary">Anuluj</a>
+                </div>
+            </div>
+
+        </div>
+    </main>
+
+    <footer class="admin-footer">
+        Strona utworzona przez: Kacper Majocha 4TP &nbsp;|&nbsp; © 2026 Świat Kostek - Panel Administratora
+    </footer>
+
+    <script src="bootstrap-5.3.8-dist/js/bootstrap.bundle.min.js"></script>
+    <script src="js/admin.js"></script>
 </body>
 </html>

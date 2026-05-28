@@ -1,85 +1,185 @@
 <!DOCTYPE html>
 <html lang="pl">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-
-  <title>Świat Kostek - panel administratora - towary</title>
-  <meta name="robots" content="noindex">
-
-  <link rel="stylesheet" href="bootstrap-5.3.8-dist/css/bootstrap.min.css">
-  <link rel="stylesheet" href="css/admin.css">
-  <link rel="shortcut icon" href="img/favicon.png" type="image/x-icon">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Towary - Panel administratora - Świat Kostek</title>
+    <meta name="robots" content="noindex">
+    <link rel="stylesheet" href="bootstrap-5.3.8-dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/admin.css">
+    <link rel="shortcut icon" href="img/favicon.png" type="image/x-icon">
 </head>
 <body>
 
-<nav class="navbar navbar-dark bg-dark px-3">
-  <span class="navbar-brand mb-0 h1">
-    Panel administratora — Świat Kostek
-  </span>
+    <header class="topbar">
+        <div class="topbar-left">
+            <a class="topbar-brand" href="admin-dashboard.html">
+                <span class="topbar-brand-text">Świat <span>Kostek</span></span>
+            </a>
+            <button class="btn-toggle" id="sidebarToggle" aria-label="Menu">☰</button>
+        </div>
+        <div class="topbar-right">
+            <button class="topbar-badge" aria-label="Powiadomienia">🔔<span class="dot"></span></button>
+            <div class="topbar-avatar">A</div>
+            <button class="btn-logout" onclick="window.location.href='index.html'">Wyloguj</button>
+        </div>
+    </header>
 
-  <button class="btn btn-outline-light btn-sm d-lg-none"id="sidebarToggle">☰ Menu</button>
+    <div class="sidebar-overlay" id="sidebarOverlay"></div>
 
-  <button class="btn btn-outline-light btn-sm d-none d-lg-inline" onclick="window.location.href = 'index.html'">
-    Wyloguj
-  </button>
-</nav>
+    <nav class="sidebar" id="adminSidebar">
+        <span class="nav-group-label">Główne</span>
+        <a class="nav-link" href="admin-dashboard.html"><span class="nav-icon">📊</span> Dashboard</a>
+        <div class="nav-divider"></div>
+        <span class="nav-group-label">Sklep</span>
+        <a class="nav-link active" href="products-list.html"><span class="nav-icon">📦</span> Towary</a>
+        <a class="nav-link" href="admin-orders.html"><span class="nav-icon">🛒</span> Zamówienia <span class="badge-count">8</span></a>
+        <a class="nav-link" href="admin-users.html"><span class="nav-icon">👥</span> Użytkownicy</a>
+        <a class="nav-link" href="admin-categories.html"><span class="nav-icon">🗂️</span> Kategorie</a>
+        <div class="nav-divider"></div>
+        <span class="nav-group-label">Ustawienia</span>
+        <a class="nav-link" href="admin-settings.html"><span class="nav-icon">⚙️</span> Ustawienia</a>
+    </nav>
 
-<div class="container-fluid">
-  <div class="row">
-    <div class="col-lg-2 sidebar collapse-sidebar" id="sidebar">
-      <h6 class="mt-3">Menu</h6>
-      <a href="admin-dashboard.html" class="sidebar-link">Dashboard</a>
-      <a href="products-list.html" class="sidebar-link active">Towary</a>
-      <a href="#" class="sidebar-link">Zamówienia</a>
-      <a href="#" class="sidebar-link">Użytkownicy</a>
-    </div>
+    <main class="main-content">
+        <div class="page-header">
+            <div>
+                <p class="breadcrumb">Panel administracyjny › <span>Towary</span></p>
+                <h1>Towary</h1>
+            </div>
+            <a href="product-add.html" class="btn btn-primary">＋ Dodaj produkt</a>
+        </div>
 
-    <div class="col-lg-10 p-4">
+        <div class="card">
+            <div class="card-header">
+                <!-- Wyszukiwarka i filtry -->
+                <div class="table-search">
+                    <input type="text" placeholder="🔍  Szukaj produktu…" style="min-width:220px;">
+                    <select>
+                        <option>Wszystkie kategorie</option>
+                        <option>3×3×3</option>
+                        <option>2×2×2</option>
+                        <option>4×4×4</option>
+                        <option>Pyraminx</option>
+                        <option>Megaminx</option>
+                    </select>
+                    <select>
+                        <option>Sortuj: ID ↑</option>
+                        <option>Nazwa A-Z</option>
+                        <option>Cena rosnąco</option>
+                        <option>Cena malejąco</option>
+                        <option>Stan magazynu</option>
+                    </select>
+                </div>
+                <span style="color:var(--muted);font-size:.82rem;">Łącznie: 12 produktów</span>
+            </div>
 
-      <div class="d-flex justify-content-between mb-3">
-        <h3>Towary</h3>
+            <div style="overflow-x:auto;">
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>Zdjęcie</th>
+                            <th>Nazwa</th>
+                            <th>Kategoria</th>
+                            <th>Cena</th>
+                            <th>Stan</th>
+                            <th>Status</th>
+                            <th>Akcje</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td style="color:var(--muted)">#1</td>
+                            <td><img src="img/cubes/gan-356-maglev-uv.jpg" class="product-thumb" alt="GAN 356 M"></td>
+                            <td><strong>GAN 356 M</strong><br><small style="color:var(--muted)">Maglev UV</small></td>
+                            <td>3×3×3</td>
+                            <td><strong>59 zł</strong></td>
+                            <td>42</td>
+                            <td><span class="status aktywny">Aktywny</span></td>
+                            <td class="d-flex gap-1 flex-wrap">
+                                <a href="product-edit.html" class="btn-action edit">✏️ Edytuj</a>
+                                <button class="btn-action delete">🗑 Usuń</button>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td style="color:var(--muted)">#2</td>
+                            <td><img src="img/cubes/moyu-rs3m-v5-magnetic-3x3x3.jpg" class="product-thumb" alt="MoYu RS3M"></td>
+                            <td><strong>MoYu RS3M 2020</strong><br><small style="color:var(--muted)">V5 Magnetic</small></td>
+                            <td>3×3×3</td>
+                            <td><strong>39 zł</strong></td>
+                            <td>87</td>
+                            <td><span class="status aktywny">Aktywny</span></td>
+                            <td class="d-flex gap-1 flex-wrap">
+                                <a href="product-edit.html" class="btn-action edit">✏️ Edytuj</a>
+                                <button class="btn-action delete">🗑 Usuń</button>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td style="color:var(--muted)">#3</td>
+                            <td><img src="img/cubes/gan-249-v2-2x2x2.jpg" class="product-thumb" alt="GAN 249 V2"></td>
+                            <td><strong>GAN 249 V2</strong><br><small style="color:var(--muted)">2×2×2 Magnetic</small></td>
+                            <td>2×2×2</td>
+                            <td><strong>49 zł</strong></td>
+                            <td style="color:var(--red);font-weight:700;">3</td>
+                            <td><span class="status aktywny">Aktywny</span></td>
+                            <td class="d-flex gap-1 flex-wrap">
+                                <a href="product-edit.html" class="btn-action edit">✏️ Edytuj</a>
+                                <button class="btn-action delete">🗑 Usuń</button>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td style="color:var(--muted)">#4</td>
+                            <td><img src="img/cubes/gan-356-maglev-uv.jpg" class="product-thumb" alt="QiYi Warrior W"></td>
+                            <td><strong>QiYi Warrior W</strong><br><small style="color:var(--muted)">Dla początkujących</small></td>
+                            <td>3×3×3</td>
+                            <td><strong>29 zł</strong></td>
+                            <td>120</td>
+                            <td><span class="status aktywny">Aktywny</span></td>
+                            <td class="d-flex gap-1 flex-wrap">
+                                <a href="product-edit.html" class="btn-action edit">✏️ Edytuj</a>
+                                <button class="btn-action delete">🗑 Usuń</button>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td style="color:var(--muted)">#5</td>
+                            <td><img src="img/cubes/gan-356-maglev-uv.jpg" class="product-thumb" alt="YJ MGC Pyraminx"></td>
+                            <td><strong>YJ MGC Pyraminx</strong><br><small style="color:var(--muted)">Elite Magnetic</small></td>
+                            <td>Pyraminx</td>
+                            <td><strong>45 zł</strong></td>
+                            <td>0</td>
+                            <td><span class="status nieaktywny">Brak w magazynie</span></td>
+                            <td class="d-flex gap-1 flex-wrap">
+                                <a href="product-edit.html" class="btn-action edit">✏️ Edytuj</a>
+                                <button class="btn-action delete">🗑 Usuń</button>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
 
-        <a href="product-add.html" class="btn btn-primary">
-          + Dodaj produkt
-        </a>
-      </div>
+            <!-- Paginacja -->
+            <div class="card-header" style="border-top:1px solid var(--border);border-bottom:none;justify-content:space-between;">
+                <span style="color:var(--muted);font-size:.82rem;">Wyświetlono 5 z 12</span>
+                <nav aria-label="Paginacja produktów">
+                    <ul class="pagination mb-0">
+                        <li class="page-item disabled"><a class="page-link" href="#">‹</a></li>
+                        <li class="page-item active"><a class="page-link" href="#">1</a></li>
+                        <li class="page-item"><a class="page-link" href="#">2</a></li>
+                        <li class="page-item"><a class="page-link" href="#">3</a></li>
+                        <li class="page-item"><a class="page-link" href="#">›</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
 
-      <table class="table table-striped">
+    </main>
 
-        <thead>
-          <tr>
-            <th>ID</th>
-            <th>Nazwa</th>
-            <th>Cena</th>
-            <th>Ilość</th>
-            <th>Akcje</th>
-          </tr>
-        </thead>
+    <footer class="admin-footer">
+        Strona utworzona przez: Kacper Majocha 4TP &nbsp;|&nbsp; © 2026 Świat Kostek - Panel Administratora
+    </footer>
 
-        <tbody>
-          <tr>
-            <td>1</td>
-            <td>GAN 356 M</td>
-            <td>59 zł</td>
-            <td>42</td>
-            <td>
-              <a href="product-edit.html" class="btn btn-sm btn-warning">Edytuj</a>
-              <button class="btn btn-sm btn-danger">Usuń</button>
-            </td>
-          </tr>
-        </tbody>
-
-      </table>
-
-    </div>
-
-  </div>
-</div>
-
-<footer class="admin-footer">Strona utworzona przez: Kacper Majocha 4TP | © 2026 Świat Kostek - Panel Administratora</footer>
-
-<script src="bootstrap-5.3.8-dist/js/bootstrap.bundle.min.js"></script>
-<script src="js/admin.js"></script>
+    <script src="bootstrap-5.3.8-dist/js/bootstrap.bundle.min.js"></script>
+    <script src="js/admin.js"></script>
 </body>
 </html>

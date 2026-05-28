@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Użytkownicy - Panel administratora - Świat Kostek</title>
+    <meta name="robots" content="noindex">
+    <link rel="stylesheet" href="bootstrap-5.3.8-dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/admin.css">
+    <link rel="shortcut icon" href="img/favicon.png" type="image/x-icon">
+</head>
+<body>
+
+    <header class="topbar">
+        <div class="topbar-left">
+            <a class="topbar-brand" href="admin-dashboard.html">
+                <span class="topbar-brand-text">Świat <span>Kostek</span></span>
+            </a>
+            <button class="btn-toggle" id="sidebarToggle" aria-label="Menu">☰</button>
+        </div>
+        <div class="topbar-right">
+            <button class="topbar-badge" aria-label="Powiadomienia">🔔<span class="dot"></span></button>
+            <div class="topbar-avatar">A</div>
+            <button class="btn-logout" onclick="window.location.href='index.html'">Wyloguj</button>
+        </div>
+    </header>
+
+    <div class="sidebar-overlay" id="sidebarOverlay"></div>
+
+    <nav class="sidebar" id="adminSidebar">
+        <span class="nav-group-label">Główne</span>
+        <a class="nav-link" href="admin-dashboard.html"><span class="nav-icon">📊</span> Dashboard</a>
+        <div class="nav-divider"></div>
+        <span class="nav-group-label">Sklep</span>
+        <a class="nav-link" href="products-list.html"><span class="nav-icon">📦</span> Towary</a>
+        <a class="nav-link" href="admin-orders.html"><span class="nav-icon">🛒</span> Zamówienia <span class="badge-count">8</span></a>
+        <a class="nav-link active" href="admin-users.html"><span class="nav-icon">👥</span> Użytkownicy</a>
+        <a class="nav-link" href="admin-categories.html"><span class="nav-icon">🗂️</span> Kategorie</a>
+        <div class="nav-divider"></div>
+        <span class="nav-group-label">Ustawienia</span>
+        <a class="nav-link" href="admin-settings.html"><span class="nav-icon">⚙️</span> Ustawienia</a>
+    </nav>
+
+    <main class="main-content">
+        <div class="page-header">
+            <div>
+                <p class="breadcrumb">Panel administracyjny › <span>Użytkownicy</span></p>
+                <h1>Użytkownicy</h1>
+            </div>
+        </div>
+
+        <!-- Statystyki -->
+        <div class="row g-3 mb-4">
+            <div class="col-6 col-md-3">
+                <div class="stat-card">
+                    <div class="stat-icon blue">👥</div>
+                    <div>
+                        <span class="stat-label">Wszyscy</span>
+                        <div class="stat-value">1 248</div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-6 col-md-3">
+                <div class="stat-card">
+                    <div class="stat-icon green">✅</div>
+                    <div>
+                        <span class="stat-label">Aktywni</span>
+                        <div class="stat-value">1 190</div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-6 col-md-3">
+                <div class="stat-card">
+                    <div class="stat-icon yellow">🆕</div>
+                    <div>
+                        <span class="stat-label">Nowi (7 dni)</span>
+                        <div class="stat-value">38</div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-6 col-md-3">
+                <div class="stat-card">
+                    <div class="stat-icon red">🚫</div>
+                    <div>
+                        <span class="stat-label">Zablokowanych</span>
+                        <div class="stat-value">3</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Użytkownicy -->
+        <div class="card">
+            <div class="card-header">
+                <div class="table-search">
+                    <input type="text" placeholder="🔍  Szukaj użytkownika…" style="min-width:220px;">
+                    <select>
+                        <option>Wszyscy</option>
+                        <option>Aktywni</option>
+                        <option>Zablokowani</option>
+                    </select>
+                </div>
+                <span style="color:var(--muted);font-size:.82rem;">1 248 użytkowników</span>
+            </div>
+
+            <div style="overflow-x:auto;">
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>Użytkownik</th>
+                            <th>Email</th>
+                            <th>Rejestracja</th>
+                            <th>Zamówień</th>
+                            <th>Łączna wartość</th>
+                            <th>Status</th>
+                            <th>Akcje</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td style="color:var(--muted)">#1001</td>
+                            <td>
+                                <div class="d-flex align-items-center gap-2">
+                                    <div class="user-avatar">AK</div>
+                                    <strong style="font-size:.88rem;">Anna Kowalska</strong>
+                                </div>
+                            </td>
+                            <td style="font-size:.85rem;">anna.k@mail.pl</td>
+                            <td style="font-size:.82rem;">12.01.2025</td>
+                            <td>7</td>
+                            <td>412 zł</td>
+                            <td><span class="status aktywny">Aktywny</span></td>
+                            <td class="d-flex gap-1">
+                                <button class="btn-action view">👁</button>
+                                <button class="btn-action delete">🚫</button>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td style="color:var(--muted)">#1002</td>
+                            <td>
+                                <div class="d-flex align-items-center gap-2">
+                                    <div class="user-avatar">PN</div>
+                                    <strong style="font-size:.88rem;">Piotr Nowak</strong>
+                                </div>
+                            </td>
+                            <td style="font-size:.85rem;">p.nowak@mail.pl</td>
+                            <td style="font-size:.82rem;">03.03.2025</td>
+                            <td>3</td>
+                            <td>256 zł</td>
+                            <td><span class="status aktywny">Aktywny</span></td>
+                            <td class="d-flex gap-1">
+                                <button class="btn-action view">👁</button>
+                                <button class="btn-action delete">🚫</button>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td style="color:var(--muted)">#1003</td>
+                            <td>
+                                <div class="d-flex align-items-center gap-2">
+                                    <div class="user-avatar">MW</div>
+                                    <strong style="font-size:.88rem;">Marta Wiśniewska</strong>
+                                </div>
+                            </td>
+                            <td style="font-size:.85rem;">mwis@mail.pl</td>
+                            <td style="font-size:.82rem;">18.04.2025</td>
+                            <td>1</td>
+                            <td>49 zł</td>
+                            <td><span class="status aktywny">Aktywny</span></td>
+                            <td class="d-flex gap-1">
+                                <button class="btn-action view">👁</button>
+                                <button class="btn-action delete">🚫</button>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td style="color:var(--muted)">#1004</td>
+                            <td>
+                                <div class="d-flex align-items-center gap-2">
+                                    <div class="user-avatar" style="background:var(--red-light);color:var(--red);">SP</div>
+                                    <strong style="font-size:.88rem;">Spam Konto</strong>
+                                </div>
+                            </td>
+                            <td style="font-size:.85rem;">spam@xyz.ru</td>
+                            <td style="font-size:.82rem;">01.05.2026</td>
+                            <td>0</td>
+                            <td>—</td>
+                            <td><span class="status anulowane">Zablokowany</span></td>
+                            <td class="d-flex gap-1">
+                                <button class="btn-action view">👁</button>
+                                <button class="btn-action edit">✓ Odblokuj</button>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="card-header" style="border-top:1px solid var(--border);border-bottom:none;justify-content:space-between;">
+                <span style="color:var(--muted);font-size:.82rem;">Wyświetlono 4 z 1 248</span>
+                <nav aria-label="Paginacja użytkowników">
+                    <ul class="pagination mb-0">
+                        <li class="page-item disabled"><a class="page-link" href="#">‹</a></li>
+                        <li class="page-item active"><a class="page-link" href="#">1</a></li>
+                        <li class="page-item"><a class="page-link" href="#">2</a></li>
+                        <li class="page-item"><a class="page-link" href="#">›</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+
+    </main>
+
+    <footer class="admin-footer">
+        Strona utworzona przez: Kacper Majocha 4TP &nbsp;|&nbsp; © 2026 Świat Kostek - Panel Administratora
+    </footer>
+
+    <script src="bootstrap-5.3.8-dist/js/bootstrap.bundle.min.js"></script>
+    <script src="js/admin.js"></script>
+</body>
+</html>

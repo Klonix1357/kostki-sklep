@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Kategorie - Panel administratora - Świat Kostek</title>
+    <meta name="robots" content="noindex">
+    <link rel="stylesheet" href="bootstrap-5.3.8-dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/admin.css">
+    <link rel="shortcut icon" href="img/favicon.png" type="image/x-icon">
+</head>
+<body>
+
+    <header class="topbar">
+        <div class="topbar-left">
+            <a class="topbar-brand" href="admin-dashboard.html">
+                <span class="topbar-brand-text">Świat <span>Kostek</span></span>
+            </a>
+            <button class="btn-toggle" id="sidebarToggle" aria-label="Menu">☰</button>
+        </div>
+        <div class="topbar-right">
+            <button class="topbar-badge" aria-label="Powiadomienia">🔔<span class="dot"></span></button>
+            <div class="topbar-avatar">A</div>
+            <button class="btn-logout" onclick="window.location.href='index.html'">Wyloguj</button>
+        </div>
+    </header>
+
+    <div class="sidebar-overlay" id="sidebarOverlay"></div>
+
+    <nav class="sidebar" id="adminSidebar">
+        <span class="nav-group-label">Główne</span>
+        <a class="nav-link" href="admin-dashboard.html"><span class="nav-icon">📊</span> Dashboard</a>
+        <div class="nav-divider"></div>
+        <span class="nav-group-label">Sklep</span>
+        <a class="nav-link" href="products-list.html"><span class="nav-icon">📦</span> Towary</a>
+        <a class="nav-link" href="admin-orders.html"><span class="nav-icon">🛒</span> Zamówienia <span class="badge-count">8</span></a>
+        <a class="nav-link" href="admin-users.html"><span class="nav-icon">👥</span> Użytkownicy</a>
+        <a class="nav-link active" href="admin-categories.html"><span class="nav-icon">🗂️</span> Kategorie</a>
+        <div class="nav-divider"></div>
+        <span class="nav-group-label">Ustawienia</span>
+        <a class="nav-link" href="admin-settings.html"><span class="nav-icon">⚙️</span> Ustawienia</a>
+    </nav>
+
+    <main class="main-content">
+        <div class="page-header">
+            <div>
+                <p class="breadcrumb">Panel administracyjny › <span>Kategorie</span></p>
+                <h1>Kategorie</h1>
+            </div>
+        </div>
+
+        <div class="row g-3">
+            
+            <!-- Lista kategorii -->
+            <div class="col-lg-7">
+                <div class="card">
+                    <div class="card-header">
+                        <h5>Wszystkie kategorie</h5>
+                        <span style="color:var(--muted);font-size:.82rem;">10 kategorii</span>
+                    </div>
+                    <div style="overflow-x:auto;">
+                        <table class="table">
+                            <thead>
+                                <tr>
+                                    <th>ID</th>
+                                    <th>Nazwa</th>
+                                    <th>Produktów</th>
+                                    <th>Status</th>
+                                    <th>Akcje</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td style="color:var(--muted)">#1</td>
+                                    <td><strong>3×3×3</strong></td>
+                                    <td>48</td>
+                                    <td><span class="status aktywny">Aktywna</span></td>
+                                    <td class="d-flex gap-1">
+                                        <button class="btn-action edit">✏️</button>
+                                        <button class="btn-action delete">🗑</button>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td style="color:var(--muted)">#2</td>
+                                    <td><strong>2×2×2</strong></td>
+                                    <td>22</td>
+                                    <td><span class="status aktywny">Aktywna</span></td>
+                                    <td class="d-flex gap-1">
+                                        <button class="btn-action edit">✏️</button>
+                                        <button class="btn-action delete">🗑</button>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td style="color:var(--muted)">#3</td>
+                                    <td><strong>4×4×4</strong></td>
+                                    <td>18</td>
+                                    <td><span class="status aktywny">Aktywna</span></td>
+                                    <td class="d-flex gap-1">
+                                        <button class="btn-action edit">✏️</button>
+                                        <button class="btn-action delete">🗑</button>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td style="color:var(--muted)">#4</td>
+                                    <td><strong>Pyraminx</strong></td>
+                                    <td>12</td>
+                                    <td><span class="status aktywny">Aktywna</span></td>
+                                    <td class="d-flex gap-1">
+                                        <button class="btn-action edit">✏️</button>
+                                        <button class="btn-action delete">🗑</button>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td style="color:var(--muted)">#5</td>
+                                    <td><strong>Skewb</strong></td>
+                                    <td>9</td>
+                                    <td><span class="status aktywny">Aktywna</span></td>
+                                    <td class="d-flex gap-1">
+                                        <button class="btn-action edit">✏️</button>
+                                        <button class="btn-action delete">🗑</button>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td style="color:var(--muted)">#6</td>
+                                    <td><strong>Megaminx</strong></td>
+                                    <td>7</td>
+                                    <td><span class="status aktywny">Aktywna</span></td>
+                                    <td class="d-flex gap-1">
+                                        <button class="btn-action edit">✏️</button>
+                                        <button class="btn-action delete">🗑</button>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td style="color:var(--muted)">#7</td>
+                                    <td><strong>Square-1</strong></td>
+                                    <td>4</td>
+                                    <td><span class="status nieaktywny">Ukryta</span></td>
+                                    <td class="d-flex gap-1">
+                                        <button class="btn-action edit">✏️</button>
+                                        <button class="btn-action delete">🗑</button>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Formularz dodawania kategorii -->
+            <div class="col-lg-5">
+                <div class="card">
+                    <div class="card-header"><h5>Dodaj nową kategorię</h5></div>
+                    <div class="card-body">
+                        <div class="mb-3">
+                            <label class="form-label" for="catName">Nazwa kategorii *</label>
+                            <input type="text" id="catName" class="form-control" placeholder="np. 5×5×5">
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label" for="catDesc">Opis (opcjonalnie)</label>
+                            <textarea id="catDesc" class="form-control" rows="3"
+                                      placeholder="Krótki opis kategorii…"></textarea>
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label" for="catIcon">Ikonka (emoji)</label>
+                            <input type="text" id="catIcon" class="form-control" placeholder="np. 🧊" maxlength="4">
+                            <span class="form-text">Opcjonalna ikonka widoczna w menu.</span>
+                        </div>
+                        <div class="mb-4">
+                            <label class="form-label" for="catStatus">Status</label>
+                            <select id="catStatus" class="form-select">
+                                <option>Aktywna (widoczna w sklepie)</option>
+                                <option>Ukryta</option>
+                            </select>
+                        </div>
+                        <button class="btn btn-primary w-100">Dodaj kategorię</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </main>
+
+    <footer class="admin-footer">
+        Strona utworzona przez: Kacper Majocha 4TP &nbsp;|&nbsp; © 2026 Świat Kostek - Panel Administratora
+    </footer>
+
+    <script src="bootstrap-5.3.8-dist/js/bootstrap.bundle.min.js"></script>
+    <script src="js/admin.js"></script>
+</body>
+</html>

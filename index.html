@@ -3,227 +3,348 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Świat Kostek</title>
-    <meta name="description" content="Świat Kostek - sklep z kostkami Rubika i łamigłówkami. Kostki 2x2x2, 3x3x3, 4x4x4, 5x5x5, 6x6x6, 7x7x7, Praminx, Skewb, Megamix i więcej.">
+
+    <!-- SEO -->
+    <title>Świat Kostek - sklep z kostkami Rubika</title>
+    <meta name="description" content="Świat Kostek - największy sklep z kostkami Rubika. Kostki 2x2 do 7x7, Pyraminx, Skewb, Megaminx. Szybka dostawa, najlepsze ceny.">
     <meta name="keywords" content="kostka rubika, speedcubing, kostki rubika sklep, kostka 3x3x3, pyraminx, skewb, megaminx">
-    <meta property="og:title" content="Świat Kostek">
-    <meta property="og:description" content="Najlepsze kostki Rubika dla początkujących i speedcuberów">
+
+    <!-- Open graph (facebook, messenger, whatsApp) -->
+    <meta property="og:title" content="Świat Kostek - sklep z kostkami Rubika">
+    <meta property="og:description" content="Najlepsze kostki Rubika dla początkujących i zawodowych speedcuberów">
     <meta property="og:type" content="website">
     <meta property="og:image" content="img/favicon.png">
+    <meta property="og:locale" content="pl_PL">
+
+    <!-- Twitter card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Świat Kostek - sklep z kostkami Rubika">
+    <meta name="twitter:description" content="Najlepsze kostki Rubika dla początkujących i zawodowych speedcuberów">
+
     <link rel="stylesheet" href="bootstrap-5.3.8-dist/css/bootstrap.min.css">
     <link rel="stylesheet" href="css/style.css">
     <link rel="shortcut icon" href="img/favicon.png" type="image/x-icon">
 </head>
 <body class="d-flex flex-column min-vh-100">
-    <nav class="navbar navbar-expand-lg navbar-dark bg-primary fixed-top">
+
+    <!-- NAWIGACJA -->
+    <nav class="navbar navbar-expand-lg fixed-top">
         <div class="container">
 
-            <a class="navbar-brand d-flex align-items-center" href="index.html">
-                <img class="me-2 logo" src="img/logo.png" alt="Logo Świat Kostek">
-                <strong>Świat kostek</strong>
+            <a class="navbar-brand d-flex align-items-center gap-2" href="index.html">
+                <img class="logo" src="img/logo.png" alt="Logo Świat Kostek">
+                <strong>Świat Kostek</strong>
             </a>
-            
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#nav">
+
+            <button class="navbar-toggler border-secondary" type="button"
+                    data-bs-toggle="collapse" data-bs-target="#nav"
+                    aria-label="Otwórz menu">
                 <span class="navbar-toggler-icon"></span>
             </button>
 
             <div class="collapse navbar-collapse" id="nav">
                 <ul class="navbar-nav ms-auto align-items-lg-center">
+
                     <li class="nav-item">
                         <a class="nav-link" href="index.html">Strona główna</a>
                     </li>
+
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Nowości</a>
+                        <a class="nav-link" href="search.html">Nowości</a>
                     </li>
+
                     <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown">Produkty</a>
-                        <ul class="dropdown-menu">
-                            <li><a class="dropdown-item" href="#">2x2x2</a></li>
-                            <li><a class="dropdown-item" href="#">3x3x3</a></li>
-                            <li><a class="dropdown-item" href="#">4x4x4</a></li>
-                            <li><a class="dropdown-item" href="#">5x5x5</a></li>
-                            <li><a class="dropdown-item" href="#">6x6x6</a></li>
-                            <li><a class="dropdown-item" href="#">7x7x7</a></li>
+                        <a class="nav-link dropdown-toggle" href="#"
+                           data-bs-toggle="dropdown" aria-expanded="false">
+                            Produkty
+                        </a>
+                        <ul class="dropdown-menu dropdown-menu-dark">
+                            <li><a class="dropdown-item" href="search.html">2×2×2</a></li>
+                            <li><a class="dropdown-item" href="search.html">3×3×3</a></li>
+                            <li><a class="dropdown-item" href="search.html">4×4×4</a></li>
+                            <li><a class="dropdown-item" href="search.html">5×5×5</a></li>
+                            <li><a class="dropdown-item" href="search.html">6×6×6</a></li>
+                            <li><a class="dropdown-item" href="search.html">7×7×7</a></li>
                             <li><hr class="dropdown-divider"></li>
-                            <li><a class="dropdown-item" href="#">Pyraminx</a></li>
-                            <li><a class="dropdown-item" href="#">Skewb</a></li>
-                            <li><a class="dropdown-item" href="#">Square-1</a></li>
-                            <li><a class="dropdown-item" href="#">Square-2</a></li>
-                            <li><a class="dropdown-item" href="#">Megaminx</a></li>
+                            <li><a class="dropdown-item" href="search.html">Pyraminx</a></li>
+                            <li><a class="dropdown-item" href="search.html">Skewb</a></li>
+                            <li><a class="dropdown-item" href="search.html">Square-1</a></li>
+                            <li><a class="dropdown-item" href="search.html">Megaminx</a></li>
                         </ul>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">Kontakt</a>
                     </li>
 
                     <li class="nav-item ms-lg-3">
-                        <a class="btn btn-light cart" href="cart.html">
+                        <a class="btn-cart" href="cart.html" aria-label="Koszyk">
                             <img id="cart-logo" src="img/shopping-cart-icon.png" alt="koszyk">
-                            <span class="badge cart-count">2</span>
+                            Koszyk
+                            <span class="cart-count">2</span>
                         </a>
                     </li>
+
                 </ul>
             </div>
         </div>
     </nav>
 
-    <header class="hero text-center bg-light flex-grow-1">
-        <div class="container">
-            <h1 class="display-4 mb-3">Witaj w Świecie Kostek</h1>
-            <p class="lead">Najlepsze kostki Rubika dla początkujących i speedcuberów</p>
+    <!-- HERO -->
+    <header class="hero text-center">
+        <div class="container position-relative">
+            <p class="text-uppercase mb-2" style="color:#0050ff;font-weight:700;font-size:.85rem;letter-spacing:2px;">
+                ★ Najlepszy sklep speedcubingowy ★
+            </p>
+            <h1>Twój świat<br><span>kostek Rubika</span></h1>
+            <p class="mt-3 mx-auto">
+                Ponad 200 modeli kostek - od podstawowych 3×3 po zaawansowane łamigłówki.<br>
+                Szybka dostawa, gwarancja jakości.
+            </p>
 
+            <!-- Wyszukiwarka -->
             <div class="search-box">
                 <div class="input-group input-group-lg">
-                    <input type="text" class="form-control" placeholder="Szukaj kostek...">
-                    <button onclick="window.location.href = 'search.html'" class="btn btn-warning">Szukaj</button>
+                    <input type="text" class="form-control"
+                           placeholder="Szukaj np. GAN 356, Pyraminx…"
+                           aria-label="Wyszukaj produkt">
+                    <button class="btn" onclick="window.location.href='search.html'"
+                            type="button">
+                        🔍 Szukaj
+                    </button>
                 </div>
+            </div>
+
+            <!-- Szybkie linki pod wyszukiwarką -->
+            <div class="mt-3 d-flex gap-2 flex-wrap justify-content-center">
+                <a href="search.html" class="badge rounded-pill text-decoration-none"
+                   style="background:rgba(255,255,255,.12);color:#ccc;padding:7px 14px;font-size:.82rem;">3×3×3</a>
+                <a href="search.html" class="badge rounded-pill text-decoration-none"
+                   style="background:rgba(255,255,255,.12);color:#ccc;padding:7px 14px;font-size:.82rem;">GAN</a>
+                <a href="search.html" class="badge rounded-pill text-decoration-none"
+                   style="background:rgba(255,255,255,.12);color:#ccc;padding:7px 14px;font-size:.82rem;">MoYu</a>
+                <a href="search.html" class="badge rounded-pill text-decoration-none"
+                   style="background:rgba(255,255,255,.12);color:#ccc;padding:7px 14px;font-size:.82rem;">Pyraminx</a>
+                <a href="search.html" class="badge rounded-pill text-decoration-none"
+                   style="background:rgba(255,255,255,.12);color:#ccc;padding:7px 14px;font-size:.82rem;">Nowości</a>
             </div>
         </div>
     </header>
 
-    <section class="promo-section flex-grow-1">
+    <!-- BANERY KARUZELA -->
+    <section class="promo-section" aria-label="Promocje">
         <div class="container">
             <div id="promoCarousel" class="carousel slide" data-bs-ride="carousel">
+                <div class="carousel-indicators">
+                    <button type="button" data-bs-target="#promoCarousel" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slajd 1"></button>
+                    <button type="button" data-bs-target="#promoCarousel" data-bs-slide-to="1" aria-label="Slajd 2"></button>
+                    <button type="button" data-bs-target="#promoCarousel" data-bs-slide-to="2" aria-label="Slajd 3"></button>
+                </div>
                 <div class="carousel-inner promo-banner">
                     <div class="carousel-item active">
-                        <img src="img/baners/baner_ganv100.png" class="d-block w-100">
+                        <img src="img/baners/baner_ganv100.png" class="d-block w-100" alt="Promocja GAN V100">
                     </div>
-                  
                     <div class="carousel-item">
-                        <img src="img/baners/baner_ganv100.png" class="d-block w-100">
+                        <img src="img/baners/baner_ganv100.png" class="d-block w-100" alt="Promocja - nowości">
                     </div>
-                  
                     <div class="carousel-item">
-                        <img src="img/baners/baner_ganv100.png" class="d-block w-100">
+                        <img src="img/baners/baner_ganv100.png" class="d-block w-100" alt="Darmowa dostawa">
                     </div>
                 </div>
-              
-                <button class="carousel-control-prev" data-bs-target="#promoCarousel" data-bs-slide="prev">
+                <button class="carousel-control-prev" data-bs-target="#promoCarousel" data-bs-slide="prev" aria-label="Poprzedni">
                     <span class="carousel-control-prev-icon"></span>
                 </button>
-                <button class="carousel-control-next" data-bs-target="#promoCarousel" data-bs-slide="next">
+                <button class="carousel-control-next" data-bs-target="#promoCarousel" data-bs-slide="next" aria-label="Następny">
                     <span class="carousel-control-next-icon"></span>
                 </button>
             </div>
         </div>
     </section>
 
-    <section class="py-5 bg-light flex-grow-1">
+    <!-- ZALETY -->
+    <section class="py-4 bg-white border-bottom" aria-label="Zalety sklepu">
         <div class="container">
-          <h2 class="text-center mb-5">Kategorie kostek</h2>
-          <div class="row g-4">
-            <div class="col-6 col-md-4 col-lg-2">
-              <a href="#" class="category-card">
-                <img src="img/kategorie/3x3x3.png" class="category-icon" alt="3x3">
-                <div>3x3x3</div>
-              </a>
+            <div class="row g-3 text-center">
+                <div class="col-6 col-md-3">
+                    <div class="d-flex flex-column align-items-center gap-1">
+                        <span style="font-size:1.8rem;">🚚</span>
+                        <strong style="font-size:.88rem;">Dostawa 24h</strong>
+                        <span class="text-muted" style="font-size:.78rem;">Zamów do 15:00</span>
+                    </div>
+                </div>
+                <div class="col-6 col-md-3">
+                    <div class="d-flex flex-column align-items-center gap-1">
+                        <span style="font-size:1.8rem;">🔒</span>
+                        <strong style="font-size:.88rem;">Bezpieczne płatności</strong>
+                        <span class="text-muted" style="font-size:.78rem;">BLIK, karta, przelew</span>
+                    </div>
+                </div>
+                <div class="col-6 col-md-3">
+                    <div class="d-flex flex-column align-items-center gap-1">
+                        <span style="font-size:1.8rem;">↩️</span>
+                        <strong style="font-size:.88rem;">Zwrot 30 dni</strong>
+                        <span class="text-muted" style="font-size:.78rem;">Bez pytań</span>
+                    </div>
+                </div>
+                <div class="col-6 col-md-3">
+                    <div class="d-flex flex-column align-items-center gap-1">
+                        <span style="font-size:1.8rem;">🏆</span>
+                        <strong style="font-size:.88rem;">Oryginalne produkty</strong>
+                        <span class="text-muted" style="font-size:.78rem;">Gwarancja producenta</span>
+                    </div>
+                </div>
             </div>
-          
-            <div class="col-6 col-md-4 col-lg-2">
-              <a href="#" class="category-card">
-                <img src="img/kategorie/3x3x3.png" class="category-icon" alt="2x2">
-                <div>2x2x2</div>
-              </a>
-            </div>
-          
-            <div class="col-6 col-md-4 col-lg-2">
-              <a href="#" class="category-card">
-                <img src="img/kategorie/3x3x3.png" class="category-icon" alt="4x4">
-                <div>4x4x4</div>
-              </a>
-            </div>
-          
-            <div class="col-6 col-md-4 col-lg-2">
-              <a href="#" class="category-card">
-                <img src="img/kategorie/3x3x3.png" class="category-icon" alt="Pyraminx">
-                <div>Pyraminx</div>
-              </a>
-            </div>
-          
-            <div class="col-6 col-md-4 col-lg-2">
-              <a href="#" class="category-card">
-                <img src="img/kategorie/3x3x3.png" class="category-icon" alt="Skewb">
-                <div>Skewb</div>
-              </a>
-            </div>
-          
-            <div class="col-6 col-md-4 col-lg-2">
-              <a href="#" class="category-card">
-                <img src="img/kategorie/3x3x3.png" class="category-icon" alt="Megaminx">
-                <div>Megaminx</div>
-              </a>
-            </div>
-          </div>
         </div>
     </section>
-    
-    <section class="py-5 bg-light flex-grow-1">
+
+    <!-- KATEGORIE -->
+    <section class="py-5 bg-light" aria-labelledby="kategorieTitle">
         <div class="container">
-            <h2 class="text-center mb-4">Popularne kostki</h2>
+            <h2 class="section-title" id="kategorieTitle">Kategorie kostek</h2>
+            <div class="row g-3">
+                <div class="col-6 col-md-4 col-lg-2">
+                    <a href="search.html" class="category-card">
+                        <img src="img/kategorie/3x3x3.png" class="category-icon" alt="Kostka 3x3x3">
+                        <div>3×3×3</div>
+                    </a>
+                </div>
+                <div class="col-6 col-md-4 col-lg-2">
+                    <a href="search.html" class="category-card">
+                        <img src="img/kategorie/3x3x3.png" class="category-icon" alt="Kostka 2x2x2">
+                        <div>2×2×2</div>
+                    </a>
+                </div>
+                <div class="col-6 col-md-4 col-lg-2">
+                    <a href="search.html" class="category-card">
+                        <img src="img/kategorie/3x3x3.png" class="category-icon" alt="Kostka 4x4x4">
+                        <div>4×4×4</div>
+                    </a>
+                </div>
+                <div class="col-6 col-md-4 col-lg-2">
+                    <a href="search.html" class="category-card">
+                        <img src="img/kategorie/3x3x3.png" class="category-icon" alt="Pyraminx">
+                        <div>Pyraminx</div>
+                    </a>
+                </div>
+                <div class="col-6 col-md-4 col-lg-2">
+                    <a href="search.html" class="category-card">
+                        <img src="img/kategorie/3x3x3.png" class="category-icon" alt="Skewb">
+                        <div>Skewb</div>
+                    </a>
+                </div>
+                <div class="col-6 col-md-4 col-lg-2">
+                    <a href="search.html" class="category-card">
+                        <img src="img/kategorie/3x3x3.png" class="category-icon" alt="Megaminx">
+                        <div>Megaminx</div>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- POPULARNE PRODUKTY -->
+    <section class="py-5" aria-labelledby="popularneTitle">
+        <div class="container">
+            <div class="d-flex justify-content-between align-items-end mb-4 flex-wrap gap-2">
+                <h2 class="section-title mb-0" id="popularneTitle">Popularne kostki</h2>
+                <a href="search.html" class="btn btn-outline-primary btn-sm">
+                    Zobacz wszystkie →
+                </a>
+            </div>
 
             <div class="row g-4">
 
                 <div class="col-md-4">
-                  <div class="card position-relative">
-                    <span class="badge badge-promo">PROMOCJA</span>
-                    <img src="img/cubes/gan-356-maglev-uv.jpg" class="card-img-top">
-                    <div class="card-body">
-                      <h5>GAN 356</h5>
-                      <button class="btn btn-outline-primary">Zobacz</button>
-                    </div>
-                  </div>
+                    <article class="card position-relative h-100">
+                        <span class="badge badge-promo">PROMOCJA</span>
+                        <img src="img/cubes/gan-356-maglev-uv.jpg"
+                             class="card-img-top"
+                             alt="GAN 356 M - profesjonalna kostka speedcube 3x3x3"
+                             loading="lazy" width="400" height="220">
+                        <div class="card-body d-flex flex-column">
+                            <h3 class="h5 fw-bold mb-1">GAN 356 M</h3>
+                            <p class="text-muted small mb-2">Profesjonalna kostka speedcube 3×3×3</p>
+                            <div class="mb-3">
+                                <span class="old-price-tag">89 zł</span>
+                                <span class="price-tag">59 zł</span>
+                            </div>
+                            <a href="search.html" class="btn btn-primary mt-auto">Dodaj do koszyka</a>
+                        </div>
+                    </article>
                 </div>
 
                 <div class="col-md-4">
-                  <div class="card position-relative">
-                    <span class="badge badge-promo">PROMOCJA</span>
-                    <img src="img/cubes/moyu-rs3m-v5-magnetic-3x3x3.jpg" class="card-img-top">
-                    <div class="card-body">
-                      <h5>MoYu RS3M</h5>
-                      <button class="btn btn-outline-primary">Zobacz</button>
-                    </div>
-                  </div>
+                    <article class="card position-relative h-100">
+                        <img src="img/cubes/moyu-rs3m-v5-magnetic-3x3x3.jpg"
+                             class="card-img-top"
+                             alt="MoYu RS3M 2020 - magnetyczna kostka 3x3x3"
+                             loading="lazy" width="400" height="220">
+                        <div class="card-body d-flex flex-column">
+                            <h3 class="h5 fw-bold mb-1">MoYu RS3M 2020</h3>
+                            <p class="text-muted small mb-2">Magnetyczna kostka speedcube</p>
+                            <div class="mb-3">
+                                <span class="price-tag">39 zł</span>
+                            </div>
+                            <a href="search.html" class="btn btn-primary mt-auto">Dodaj do koszyka</a>
+                        </div>
+                    </article>
                 </div>
 
                 <div class="col-md-4">
-                  <div class="card position-relative">
-                    <span class="badge badge-promo">PROMOCJA</span>
-                    <img src="img/cubes/gan-249-v2-2x2x2.jpg" class="card-img-top">
-                    <div class="card-body">
-                      <h5>YJ MGC 2x2</h5>
-                      <button class="btn btn-outline-primary">Zobacz</button>
-                    </div>
-                  </div>
+                    <article class="card position-relative h-100">
+                        <span class="badge badge-promo">NOWOŚĆ</span>
+                        <img src="img/cubes/gan-249-v2-2x2x2.jpg"
+                             class="card-img-top"
+                             alt="GAN 249 V2 - kostka 2x2x2"
+                             loading="lazy" width="400" height="220">
+                        <div class="card-body d-flex flex-column">
+                            <h3 class="h5 fw-bold mb-1">GAN 249 V2</h3>
+                            <p class="text-muted small mb-2">Magnetyczna kostka 2×2×2</p>
+                            <div class="mb-3">
+                                <span class="price-tag">49 zł</span>
+                            </div>
+                            <a href="search.html" class="btn btn-primary mt-auto">Dodaj do koszyka</a>
+                        </div>
+                    </article>
                 </div>
 
             </div>
         </div>
     </section>
 
-    <section class="py-5 text-center bg-primary text-white">
-        <div class="container">
-            <h2>Dołącz do społeczności speedcuberów</h2>
-            <p>Sprawdź nasze poradniki od profesjonalnych speedcuberów i nowości ze świata kostek</p>
-            <a class="btn btn-warning btn-lg" href="https://discord.com/">Discord</a>
+    <!-- CTA (Discord) -->
+    <section class="cta-section text-center" aria-label="Społeczność">
+        <div class="container position-relative">
+            <p class="mb-2" style="color:var(--yellow);font-weight:700;font-size:.85rem;letter-spacing:2px;text-transform:uppercase;">
+                Społeczność speedcuberów
+            </p>
+            <h2>Dołącz do nas na Discordzie!</h2>
+            <p class="text-secondary mt-2 mb-4" style="max-width:500px;margin:auto;">
+                Poradniki od zawodowców, turnieje online, nowości ze świata kostek
+                i aktywna społeczność 10 000+ speedcuberów.
+            </p>
+            <a class="btn btn-warning btn-lg" href="https://discord.com/" target="_blank" rel="noopener">
+                Dołącz teraz →
+            </a>
         </div>
     </section>
 
-    <footer class="py-4 text-light bg-dark">
+    <!-- FOOTER -->
+    <footer class="py-4 text-light" style="background:var(--dark);">
         <div class="container text-center">
 
-            <div class="mb-3 fs-4">
-                <a href="#" class="text-light me-3">Facebook</a>
-                <a href="#" class="text-light me-3">Instagram</a>
-                <a href="#" class="text-light">Discord</a>
+            <div class="mb-3 d-flex justify-content-center gap-4 fs-5">
+                <a href="#" class="text-light text-decoration-none">Facebook</a>
+                <a href="#" class="text-light text-decoration-none">Instagram</a>
+                <a href="https://discord.com/" class="text-light text-decoration-none">Discord</a>
             </div>
 
-            <div class="mb-2">
-                <a href="#" class="text-light me-3">Regulamin</a>
-                <a href="#" class="text-light me-3">Polityka prywatności</a>
-                <a href="admin-dashboard.html" class="text-light">Panel administracyjny</a>
+            <div class="mb-2 d-flex justify-content-center gap-3 flex-wrap" style="font-size:.88rem;">
+                <a href="#" class="text-secondary text-decoration-none">Regulamin</a>
+                <a href="#" class="text-secondary text-decoration-none">Polityka prywatności</a>
+                <a href="admin-dashboard.html" class="text-secondary text-decoration-none">Panel administracyjny</a>
             </div>
 
-            <p class="mb-0">Strona utworzona przez: Kacper Majocha 4TP | © 2026 Świat Kostek</p>
+            <p class="mb-0 text-secondary" style="font-size:.82rem;">
+                Strona utworzona przez: Kacper Majocha 4TP &nbsp;|&nbsp; © 2026 Świat Kostek
+            </p>
+
         </div>
     </footer>
 

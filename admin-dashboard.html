@@ -1,82 +1,245 @@
 <!DOCTYPE html>
 <html lang="pl">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-
-  <title>Świat Kostek - Panel administratora</title>
-  <meta name="robots" content="noindex">
-
-  <link rel="stylesheet" href="bootstrap-5.3.8-dist/css/bootstrap.min.css">
-  <link rel="stylesheet" href="css/admin.css">
-  <link rel="shortcut icon" href="img/favicon.png" type="image/x-icon">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Dashboard - Panel administratora - Świat Kostek</title>
+    <meta name="robots" content="noindex">
+    <link rel="stylesheet" href="bootstrap-5.3.8-dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/admin.css">
+    <link rel="shortcut icon" href="img/favicon.png" type="image/x-icon">
 </head>
 <body>
 
-<nav class="navbar navbar-dark bg-dark px-3">
-  <span class="navbar-brand mb-0 h1">
-    Panel administratora — Świat Kostek
-  </span>
+    <header class="topbar">
+        <div class="topbar-left">
+            <a class="topbar-brand" href="admin-dashboard.html">
+                <span class="topbar-brand-text">Świat <span>Kostek</span></span>
+            </a>
+            <button class="btn-toggle" id="sidebarToggle" aria-label="Menu">☰</button>
+        </div>
+        <div class="topbar-right">
+            <button class="topbar-badge" aria-label="Powiadomienia">🔔<span class="dot"></span></button>
+            <div class="topbar-avatar" title="Administrator">A</div>
+            <button class="btn-logout" onclick="window.location.href='index.html'">Wyloguj</button>
+        </div>
+    </header>
 
-  <button class="btn btn-outline-light btn-sm d-lg-none"id="sidebarToggle">☰ Menu</button>
+    <div class="sidebar-overlay" id="sidebarOverlay"></div>
 
-  <button class="btn btn-outline-light btn-sm d-none d-lg-inline" onclick="window.location.href = 'index.html'">
-    Wyloguj
-  </button>
-</nav>
+    <!-- SIDEBAR -->
+    <nav class="sidebar" id="adminSidebar" aria-label="Panel nawigacyjny">
+        <span class="nav-group-label">Główne</span>
+        <a class="nav-link active" href="admin-dashboard.html"><span class="nav-icon">📊</span> Dashboard</a>
+        <div class="nav-divider"></div>
+        <span class="nav-group-label">Sklep</span>
+        <a class="nav-link" href="products-list.html"><span class="nav-icon">📦</span> Towary</a>
+        <a class="nav-link" href="admin-orders.html"><span class="nav-icon">🛒</span> Zamówienia <span class="badge-count">8</span></a>
+        <a class="nav-link" href="admin-users.html"><span class="nav-icon">👥</span> Użytkownicy</a>
+        <a class="nav-link" href="admin-categories.html"><span class="nav-icon">🗂️</span> Kategorie</a>
+        <div class="nav-divider"></div>
+        <span class="nav-group-label">Ustawienia</span>
+        <a class="nav-link" href="admin-settings.html"><span class="nav-icon">⚙️</span> Ustawienia</a>
+    </nav>
 
-<div class="container-fluid">
-  <div class="row">
+    <!-- TREŚĆ GŁÓWNA -->
+    <main class="main-content">
 
-    <div class="col-lg-2 sidebar collapse-sidebar" id="sidebar">
-      <h6 class="mt-3">Menu</h6>
-      <a href="admin-dashboard.html" class="sidebar-link active">Dashboard</a>
-      <a href="products-list.html" class="sidebar-link">Towary</a>
-      <a href="#" class="sidebar-link">Zamówienia</a>
-      <a href="#" class="sidebar-link">Użytkownicy</a>
-    </div>
-
-    <div class="col-lg-10 p-4">
-
-      <h3 class="mb-4">Zarządzanie sprzedażą</h3>
-
-      <div class="row g-4">
-
-        <div class="col-md-3">
-          <div class="admin-card">
-            <h6>Dzisiejsza sprzedaż</h6>
-            <h3>7 245 zł</h3>
-          </div>
+        <div class="page-header">
+            <div>
+                <p class="breadcrumb">Panel administracyjny › <span>Dashboard</span></p>
+                <h1>Dashboard</h1>
+            </div>
+            <span style="color:var(--muted);font-size:.85rem;">Środa, 27 maja 2026</span>
         </div>
 
-        <div class="col-md-3">
-          <div class="admin-card">
-            <h6>Zamówienia</h6>
-            <h3>132</h3>
-          </div>
+        <!-- STATYSTYKI -->
+        <div class="row g-3 mb-4">
+            <div class="col-6 col-xl-3">
+                <div class="stat-card">
+                    <div class="stat-icon blue">💰</div>
+                    <div>
+                        <span class="stat-label">Sprzedaż dziś</span>
+                        <div class="stat-value">7 245 zł</div>
+                        <span class="stat-trend up">▲ 12% vs wczoraj</span>
+                    </div>
+                </div>
+            </div>
+            <div class="col-6 col-xl-3">
+                <div class="stat-card">
+                    <div class="stat-icon green">🛒</div>
+                    <div>
+                        <span class="stat-label">Zamówienia dziś</span>
+                        <div class="stat-value">132</div>
+                        <span class="stat-trend up">▲ 8 nowych</span>
+                    </div>
+                </div>
+            </div>
+            <div class="col-6 col-xl-3">
+                <div class="stat-card">
+                    <div class="stat-icon yellow">👤</div>
+                    <div>
+                        <span class="stat-label">Nowi klienci</span>
+                        <div class="stat-value">10</div>
+                        <span class="stat-trend down">▼ 3 vs wczoraj</span>
+                    </div>
+                </div>
+            </div>
+            <div class="col-6 col-xl-3">
+                <div class="stat-card">
+                    <div class="stat-icon red">📦</div>
+                    <div>
+                        <span class="stat-label">Stan magazynu</span>
+                        <div class="stat-value">188</div>
+                        <span class="stat-trend down">▼ 5 niski stan</span>
+                    </div>
+                </div>
+            </div>
         </div>
 
-        <div class="col-md-3">
-          <div class="admin-card">
-            <h6>Nowi klienci</h6>
-            <h3>10</h3>
-          </div>
+        <!-- WYKRES I TOP PRODUKTY -->
+        <div class="row g-3 mb-4">
+
+            <!-- Wykres sprzedaży -->
+            <div class="col-lg-7">
+                <div class="card h-100">
+                    <div class="card-header">
+                        <h5>Sprzedaż - ostatnie 7 dni</h5>
+                        <span style="color:var(--muted);font-size:.8rem;">Suma dzienna (zł)</span>
+                    </div>
+                    <div class="card-body">
+                        <div class="bar-chart-wrap">
+                            <div class="bar" style="height:55%"><span class="bar-lbl">Pon</span></div>
+                            <div class="bar" style="height:70%"><span class="bar-lbl">Wt</span></div>
+                            <div class="bar" style="height:45%"><span class="bar-lbl">Śr</span></div>
+                            <div class="bar" style="height:90%"><span class="bar-lbl">Czw</span></div>
+                            <div class="bar" style="height:80%"><span class="bar-lbl">Pt</span></div>
+                            <div class="bar" style="height:65%; background:var(--yellow)"><span class="bar-lbl">Sob</span></div>
+                            <div class="bar" style="height:100%"><span class="bar-lbl">Nd</span></div>
+                        </div>
+                        <div class="d-flex justify-content-between mt-3" style="font-size:.78rem;color:var(--muted);">
+                            <span>Łącznie: <strong style="color:var(--text)">42 180 zł</strong></span>
+                            <span>Avg/dzień: <strong style="color:var(--text)">6 026 zł</strong></span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Top produkty -->
+            <div class="col-lg-5">
+                <div class="card h-100">
+                    <div class="card-header">
+                        <h5>Top produkty</h5>
+                        <a href="products-list.html" class="btn btn-sm btn-secondary">Wszystkie</a>
+                    </div>
+                    <div class="card-body p-0">
+                        <table class="table">
+                            <thead>
+                                <tr>
+                                    <th>Produkt</th>
+                                    <th class="text-end">Sprzedano</th>
+                                    <th class="text-end">Przychód</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>GAN 356 M</td>
+                                    <td class="text-end">34</td>
+                                    <td class="text-end">2 006 zł</td>
+                                </tr>
+                                <tr>
+                                    <td>MoYu RS3M 2020</td>
+                                    <td class="text-end">28</td>
+                                    <td class="text-end">1 092 zł</td>
+                                </tr>
+                                <tr>
+                                    <td>QiYi Warrior W</td>
+                                    <td class="text-end">21</td>
+                                    <td class="text-end">609 zł</td>
+                                </tr>
+                                <tr>
+                                    <td>GAN 249 V2</td>
+                                    <td class="text-end">18</td>
+                                    <td class="text-end">882 zł</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
         </div>
 
-        <div class="col-md-3">
-          <div class="admin-card">
-            <h6>Produkty w magazynie</h6>
-            <h3>188</h3>
-          </div>
+        <!-- OSTATNIE ZAMÓWIENIA -->
+        <div class="card mb-4">
+            <div class="card-header">
+                <h5>Ostatnie zamówienia</h5>
+                <a href="admin-orders.html" class="btn btn-sm btn-primary">Zobacz wszystkie →</a>
+            </div>
+            <div style="overflow-x:auto;">
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th>Nr zamówienia</th>
+                            <th>Klient</th>
+                            <th>Data</th>
+                            <th>Kwota</th>
+                            <th>Status</th>
+                            <th>Akcje</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>#1042</strong></td>
+                            <td>Anna Kowalska</td>
+                            <td>27.05.2026, 10:14</td>
+                            <td>98 zł</td>
+                            <td><span class="status nowe">Nowe</span></td>
+                            <td><a href="admin-orders.html" class="btn-action view">👁 Podgląd</a></td>
+                        </tr>
+                        <tr>
+                            <td><strong>#1041</strong></td>
+                            <td>Piotr Nowak</td>
+                            <td>27.05.2026, 09:02</td>
+                            <td>152 zł</td>
+                            <td><span class="status w-realizacji">W realizacji</span></td>
+                            <td><a href="admin-orders.html" class="btn-action view">👁 Podgląd</a></td>
+                        </tr>
+                        <tr>
+                            <td><strong>#1040</strong></td>
+                            <td>Marta Wiśniewska</td>
+                            <td>26.05.2026, 18:45</td>
+                            <td>49 zł</td>
+                            <td><span class="status wysłane">Wysłane</span></td>
+                            <td><a href="admin-orders.html" class="btn-action view">👁 Podgląd</a></td>
+                        </tr>
+                        <tr>
+                            <td><strong>#1039</strong></td>
+                            <td>Tomasz Zając</td>
+                            <td>26.05.2026, 15:30</td>
+                            <td>210 zł</td>
+                            <td><span class="status dostarczone">Dostarczone</span></td>
+                            <td><a href="admin-orders.html" class="btn-action view">👁 Podgląd</a></td>
+                        </tr>
+                        <tr>
+                            <td><strong>#1038</strong></td>
+                            <td>Karolina Maj</td>
+                            <td>25.05.2026, 12:00</td>
+                            <td>39 zł</td>
+                            <td><span class="status anulowane">Anulowane</span></td>
+                            <td><a href="admin-orders.html" class="btn-action view">👁 Podgląd</a></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
         </div>
-      </div>
-    </div>
-  </div>
-</div>
 
-<footer class="admin-footer">Strona utworzona przez: Kacper Majocha 4TP | © 2026 Świat Kostek - Panel Administratora</footer>
+    </main>
 
-<script src="bootstrap-5.3.8-dist/js/bootstrap.bundle.min.js"></script>
-<script src="js/admin.js"></script>
+    <footer class="admin-footer">
+        Strona utworzona przez: Kacper Majocha 4TP &nbsp;|&nbsp; © 2026 Świat Kostek - Panel Administratora
+    </footer>
+
+    <script src="bootstrap-5.3.8-dist/js/bootstrap.bundle.min.js"></script>
+    <script src="js/admin.js"></script>
 </body>
 </html>

@@ -11,51 +11,43 @@
     <link rel="shortcut icon" href="img/favicon.png" type="image/x-icon">
 </head>
 <body class="d-flex flex-column min-vh-100">
-    <nav class="navbar navbar-expand-lg navbar-dark bg-primary fixed-top">
-        <div class="container">
 
-            <a class="navbar-brand d-flex align-items-center" href="index.html">
-                <img class="me-2 logo" src="img/logo.png" alt="Logo Świat Kostek">
-                <strong>Świat kostek</strong>
+    <!-- NAWIGACJA -->
+    <nav class="navbar navbar-expand-lg fixed-top">
+        <div class="container">
+            <a class="navbar-brand d-flex align-items-center gap-2" href="index.html">
+                <img class="logo" src="img/logo.png" alt="Logo Świat Kostek">
+                <strong>Świat Kostek</strong>
             </a>
-            
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#nav">
+            <button class="navbar-toggler border-secondary" type="button"
+                    data-bs-toggle="collapse" data-bs-target="#nav" aria-label="Otwórz menu">
                 <span class="navbar-toggler-icon"></span>
             </button>
-
             <div class="collapse navbar-collapse" id="nav">
                 <ul class="navbar-nav ms-auto align-items-lg-center">
-                    <li class="nav-item">
-                        <a class="nav-link" href="index.html">Strona główna</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">Nowości</a>
-                    </li>
+                    <li class="nav-item"><a class="nav-link" href="index.html">Strona główna</a></li>
+                    <li class="nav-item"><a class="nav-link" href="search.html">Nowości</a></li>
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown">Produkty</a>
-                        <ul class="dropdown-menu">
-                            <li><a class="dropdown-item" href="#">2x2x2</a></li>
-                            <li><a class="dropdown-item" href="#">3x3x3</a></li>
-                            <li><a class="dropdown-item" href="#">4x4x4</a></li>
-                            <li><a class="dropdown-item" href="#">5x5x5</a></li>
-                            <li><a class="dropdown-item" href="#">6x6x6</a></li>
-                            <li><a class="dropdown-item" href="#">7x7x7</a></li>
+                        <ul class="dropdown-menu dropdown-menu-dark">
+                            <li><a class="dropdown-item" href="search.html">2×2×2</a></li>
+                            <li><a class="dropdown-item" href="search.html">3×3×3</a></li>
+                            <li><a class="dropdown-item" href="search.html">4×4×4</a></li>
+                            <li><a class="dropdown-item" href="search.html">5×5×5</a></li>
+                            <li><a class="dropdown-item" href="search.html">6×6×6</a></li>
+                            <li><a class="dropdown-item" href="search.html">7×7×7</a></li>
                             <li><hr class="dropdown-divider"></li>
-                            <li><a class="dropdown-item" href="#">Pyraminx</a></li>
-                            <li><a class="dropdown-item" href="#">Skewb</a></li>
-                            <li><a class="dropdown-item" href="#">Square-1</a></li>
-                            <li><a class="dropdown-item" href="#">Square-2</a></li>
-                            <li><a class="dropdown-item" href="#">Megaminx</a></li>
+                            <li><a class="dropdown-item" href="search.html">Pyraminx</a></li>
+                            <li><a class="dropdown-item" href="search.html">Skewb</a></li>
+                            <li><a class="dropdown-item" href="search.html">Square-1</a></li>
+                            <li><a class="dropdown-item" href="search.html">Megaminx</a></li>
                         </ul>
                     </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">Kontakt</a>
-                    </li>
-
                     <li class="nav-item ms-lg-3">
-                        <a class="btn btn-light cart" href="cart.html">
-                            <img id="cart-logo" src="img/shopping-cart-icon.png" alt="koszyk">
-                            <span class="badge cart-count">2</span>
+                        <a class="btn-cart" href="cart.html" aria-label="Koszyk">
+                            <img id="cart-logo" src="img/shopping-cart-icon.png" alt="">
+                            Koszyk
+                            <span class="cart-count">2</span>
                         </a>
                     </li>
                 </ul>
@@ -64,125 +56,132 @@
     </nav>
 
     <div class="container py-5 flex-grow-1">
-      <h2 class="mb-4">Twój koszyk</h2>
-      <div class="row g-4">
-        <div class="col-lg-8">
-          <div class="cart-item">
 
-            <img src="img/cubes/gan-356-maglev-uv.jpg"
-                 class="cart-img"
-                 alt="GAN 356">
-
-            <div class="flex-grow-1">
-
-              <h6 class="mb-1">GAN 356 M</h6>
-              <small class="text-muted">Profesjonalna kostka 3x3</small>
-
-              <div class="mt-2 d-flex align-items-center">
-
-                <label class="me-2">Ilość:</label>
-
-                <input type="number"
-                       class="form-control quantity-input"
-                       value="1"
-                       min="1">
-
-              </div>
+        <!-- Nagłówek strony -->
+        <div class="page-header mb-4">
+            <div>
+                <p class="breadcrumb-nav">
+                    <a href="index.html">Strona główna</a> › <span>Koszyk</span>
+                </p>
+                <h1>Twój koszyk</h1>
             </div>
-
-            <div class="text-end">
-              <div class="price">59 zł</div>
-
-              <button class="btn btn-sm btn-outline-danger mt-2">
-                Usuń
-              </button>
-
-            </div>
-          </div>
-
-          <div class="cart-item">
-
-            <img src="img/cubes/moyu-rs3m-v5-magnetic-3x3x3.jpg"
-                 class="cart-img"
-                 alt="MoYu RS3M">
-
-            <div class="flex-grow-1">
-
-              <h6 class="mb-1">MoYu RS3M 2020</h6>
-              <small class="text-muted">Magnetyczna kostka speedcube</small>
-
-              <div class="mt-2 d-flex align-items-center">
-
-                <label class="me-2">Ilość:</label>
-
-                <input type="number"
-                       class="form-control quantity-input"
-                       value="1"
-                       min="1">
-
-              </div>
-            </div>
-
-            <div class="text-end">
-
-              <div class="price">39 zł</div>
-
-              <button class="btn btn-sm btn-outline-danger mt-2">
-                Usuń
-              </button>
-
-            </div>
-          </div>
+            <a href="search.html" class="btn btn-outline-secondary btn-sm">← Kontynuuj zakupy</a>
         </div>
 
-        <div class="col-lg-4">
+        <div class="row g-4">
 
-          <div class="cart-summary">
+            <!-- LISTA PRODUKTÓW W KOSZYKU -->
+            <div class="col-lg-8">
 
-            <h5>Podsumowanie</h5>
+                <div class="cart-item">
+                    <img src="img/cubes/gan-356-maglev-uv.jpg"
+                         class="cart-img"
+                         alt="GAN 356 M - kostka 3×3×3">
+                    <div class="flex-grow-1 min-w-0">
+                        <h6 class="mb-0 fw-bold">GAN 356 M</h6>
+                        <small class="text-muted">Profesjonalna kostka 3×3×3 · GAN</small>
+                        <div class="mt-2 d-flex align-items-center gap-2">
+                            <label class="text-muted" style="font-size:.85rem;">Ilość:</label>
+                            <input type="number" class="form-control quantity-input"
+                                   value="1" min="1" aria-label="Ilość GAN 356 M">
+                        </div>
+                    </div>
+                    <div class="text-end flex-shrink-0">
+                        <div class="item-price">59 zł</div>
+                        <button class="btn btn-sm btn-outline-danger mt-2">Usuń</button>
+                    </div>
+                </div>
 
-            <div class="d-flex justify-content-between mb-2">
-              <span>GAN 356 M</span>
-              <span>1 x 59 zł</span>
+                <div class="cart-item">
+                    <img src="img/cubes/moyu-rs3m-v5-magnetic-3x3x3.jpg"
+                         class="cart-img"
+                         alt="MoYu RS3M 2020">
+                    <div class="flex-grow-1 min-w-0">
+                        <h6 class="mb-0 fw-bold">MoYu RS3M 2020</h6>
+                        <small class="text-muted">Magnetyczna kostka speedcube · MoYu</small>
+                        <div class="mt-2 d-flex align-items-center gap-2">
+                            <label class="text-muted" style="font-size:.85rem;">Ilość:</label>
+                            <input type="number" class="form-control quantity-input"
+                                   value="1" min="1" aria-label="Ilość MoYu RS3M">
+                        </div>
+                    </div>
+                    <div class="text-end flex-shrink-0">
+                        <div class="item-price">39 zł</div>
+                        <button class="btn btn-sm btn-outline-danger mt-2">Usuń</button>
+                    </div>
+                </div>
+
+                <!-- Informacja o darmowej dostawie -->
+                <div class="free-shipping-bar mt-3">
+                    <div class="d-flex justify-content-between mb-1" style="font-size:.82rem;">
+                        <span>🚚 Brakuje Ci <strong>52 zł</strong> do darmowej dostawy</span>
+                        <span style="color:var(--muted);">98 / 150 zł</span>
+                    </div>
+                    <div class="progress" style="height:6px;border-radius:3px;">
+                        <div class="progress-bar" style="width:65%;background:#2563eb;border-radius:3px;"></div>
+                    </div>
+                </div>
+
             </div>
 
-            <div class="d-flex justify-content-between mb-2">
-              <span>MoYu RS3M 2020</span>
-              <span>1 x 39 zł</span>
+            <!-- PODSUMOWANIE KOSZYKA -->
+            <div class="col-lg-4">
+                <div class="cart-summary">
+                    <h5 class="fw-bold mb-3">Podsumowanie</h5>
+
+                    <div class="d-flex justify-content-between mb-2" style="font-size:.9rem;">
+                        <span class="text-muted">GAN 356 M</span>
+                        <span>1 × 59 zł</span>
+                    </div>
+                    <div class="d-flex justify-content-between mb-2" style="font-size:.9rem;">
+                        <span class="text-muted">MoYu RS3M 2020</span>
+                        <span>1 × 39 zł</span>
+                    </div>
+
+                    <hr>
+
+                    <div class="d-flex justify-content-between mb-2" style="font-size:.9rem;">
+                        <span class="text-muted">Dostawa szacowana</span>
+                        <span>15 zł</span>
+                    </div>
+
+                    <hr>
+
+                    <div class="d-flex justify-content-between cart-total mb-4">
+                        <span>Razem</span>
+                        <span>113 zł</span>
+                    </div>
+
+                    <a href="checkout.html" class="btn btn-primary w-100 mb-2">
+                        Przejdź do zamówienia →
+                    </a>
+                    <a href="search.html" class="btn btn-outline-secondary w-100">
+                        Kontynuuj zakupy
+                    </a>
+
+                    <p class="text-center text-muted mt-3 mb-0" style="font-size:.75rem;">
+                        🔒 Bezpieczna płatność · Zwrot 30 dni
+                    </p>
+                </div>
             </div>
-
-            <hr>
-
-            <div class="d-flex justify-content-between total mb-4">
-              <span>Razem</span>
-              <span>98 zł</span>
-            </div>
-
-            <button class="btn btn-primary w-100 mb-2" onclick="window.location.href = 'checkout.html'">Przejdź do zamówienia</button>
-            <button class="btn btn-outline-secondary w-100" onclick="window.location.href = 'search.html'">Kontynuuj zakupy</button>
-
-          </div>
-
         </div>
-      </div>
     </div>
 
-    <footer class="py-4 text-light bg-dark">
+    <footer class="py-4 text-light bg-dark mt-auto">
         <div class="container text-center">
-
-            <div class="mb-3 fs-4">
-                <a href="#" class="text-light me-3">Facebook</a>
-                <a href="#" class="text-light me-3">Instagram</a>
-                <a href="#" class="text-light">Discord</a>
+            <div class="mb-3 d-flex justify-content-center gap-4 fs-5">
+                <a href="#" class="text-light text-decoration-none">Facebook</a>
+                <a href="#" class="text-light text-decoration-none">Instagram</a>
+                <a href="#" class="text-light text-decoration-none">Discord</a>
             </div>
-
-            <div class="mb-2">
-                <a href="#" class="text-light me-3">Regulamin</a>
-                <a href="#" class="text-light me-3">Polityka prywatności</a>
-                <a href="admin-dashboard.html" class="text-light">Panel administracyjny</a>
+            <div class="mb-2 d-flex justify-content-center gap-3 flex-wrap" style="font-size:.88rem;">
+                <a href="#" class="text-secondary text-decoration-none">Regulamin</a>
+                <a href="#" class="text-secondary text-decoration-none">Polityka prywatności</a>
+                <a href="admin-dashboard.html" class="text-secondary text-decoration-none">Panel administracyjny</a>
             </div>
-
-            <p class="mb-0">Strona utworzona przez: Kacper Majocha 4TP | © 2026 Świat Kostek</p>
+            <p class="mb-0 text-secondary" style="font-size:.82rem;">
+                Strona utworzona przez: Kacper Majocha 4TP &nbsp;|&nbsp; © 2026 Świat Kostek
+            </p>
         </div>
     </footer>
 
