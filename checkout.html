@@ -94,7 +94,7 @@
 
                 <!-- Dane kontaktowe -->
                 <div class="checkout-card">
-                    <h5>Dane kontaktowe</h5>
+                    <h2 style="font-size:1rem;font-weight:700;margin-bottom:1rem;">Dane kontaktowe</h2>
                     <div class="row g-3">
                         <div class="col-sm-6">
                             <label class="form-label" for="firstName">Imię *</label>
@@ -117,7 +117,7 @@
 
                 <!-- Adres dostawy -->
                 <div class="checkout-card">
-                    <h5>Adres dostawy</h5>
+                    <h2 style="font-size:1rem;font-weight:700;margin-bottom:1rem;">Adres dostawy</h2>
                     <div class="row g-3">
                         <div class="col-12">
                             <label class="form-label" for="street">Ulica i numer *</label>
@@ -136,40 +136,40 @@
 
                 <!-- Metoda dostawy -->
                 <div class="checkout-card">
-                    <h5>Metoda dostawy</h5>
+                    <h2 style="font-size:1rem;font-weight:700;margin-bottom:1rem;">Metoda dostawy</h2>
                     <div class="delivery-options">
 
                         <label class="delivery-option selected" for="deliveryCourier">
                             <input class="form-check-input" type="radio"
                                    name="delivery" id="deliveryCourier" checked>
-                            <div class="delivery-icon">🚚</div>
-                            <div class="flex-grow-1">
+                            <span class="delivery-icon">🚚</span>
+                            <span class="flex-grow-1" style="display:block;">
                                 <strong>Kurier DPD</strong>
-                                <p>Dostawa w ciągu 1-2 dni roboczych</p>
-                            </div>
-                            <div class="delivery-price">15 zł</div>
+                                <span style="display:block;font-size:.78rem;color:#6b7280;margin-top:2px;">Dostawa w ciągu 1-2 dni roboczych</span>
+                            </span>
+                            <span class="delivery-price">15 zł</span>
                         </label>
 
                         <label class="delivery-option" for="deliveryParcel">
                             <input class="form-check-input" type="radio"
                                    name="delivery" id="deliveryParcel">
-                            <div class="delivery-icon">📦</div>
-                            <div class="flex-grow-1">
+                            <span class="delivery-icon">📦</span>
+                            <span class="flex-grow-1" style="display:block;">
                                 <strong>Paczkomat InPost</strong>
-                                <p>Odbiór w wybranym paczkomacie</p>
-                            </div>
-                            <div class="delivery-price">12 zł</div>
+                                <span style="display:block;font-size:.78rem;color:#6b7280;margin-top:2px;">Odbiór w wybranym paczkomacie</span>
+                            </span>
+                            <span class="delivery-price">12 zł</span>
                         </label>
 
                         <label class="delivery-option" for="deliveryPickup">
                             <input class="form-check-input" type="radio"
                                    name="delivery" id="deliveryPickup">
-                            <div class="delivery-icon">🏪</div>
-                            <div class="flex-grow-1">
+                            <span class="delivery-icon">🏪</span>
+                            <span class="flex-grow-1" style="display:block;">
                                 <strong>Odbiór osobisty</strong>
-                                <p>Warszawa, ul. Rubika 3 · pon-pt 9:00-17:00</p>
-                            </div>
-                            <div class="delivery-price">0 zł</div>
+                                <span style="display:block;font-size:.78rem;color:#6b7280;margin-top:2px;">Warszawa, ul. Rubika 3, pon-pt 9:00-17:00</span>
+                            </span>
+                            <span class="delivery-price">0 zł</span>
                         </label>
 
                     </div>
@@ -177,37 +177,37 @@
 
                 <!-- Metoda płatności -->
                 <div class="checkout-card">
-                    <h5>Metoda płatności</h5>
+                    <h2 style="font-size:1rem;font-weight:700;margin-bottom:1rem;">Metoda płatności</h2>
                     <div class="delivery-options">
 
                         <label class="delivery-option selected" for="payBlik">
                             <input class="form-check-input" type="radio"
                                    name="payment" id="payBlik" checked>
-                            <div class="delivery-icon">⚡</div>
-                            <div class="flex-grow-1">
+                            <span class="delivery-icon">⚡</span>
+                            <span class="flex-grow-1" style="display:block;">
                                 <strong>BLIK / Szybki przelew</strong>
-                                <p>Płatność natychmiastowa</p>
-                            </div>
+                                <span style="display:block;font-size:.78rem;color:#6b7280;margin-top:2px;">Płatność natychmiastowa</span>
+                            </span>
                         </label>
 
                         <label class="delivery-option" for="payCard">
                             <input class="form-check-input" type="radio"
                                    name="payment" id="payCard">
-                            <div class="delivery-icon">💳</div>
-                            <div class="flex-grow-1">
+                            <span class="delivery-icon">💳</span>
+                            <span class="flex-grow-1" style="display:block;">
                                 <strong>Karta płatnicza</strong>
-                                <p>Visa, Mastercard, Maestro</p>
-                            </div>
+                                <span style="display:block;font-size:.78rem;color:#6b7280;margin-top:2px;">Visa, Mastercard</span>
+                            </span>
                         </label>
 
                         <label class="delivery-option" for="payCod">
                             <input class="form-check-input" type="radio"
                                    name="payment" id="payCod">
-                            <div class="delivery-icon">💵</div>
-                            <div class="flex-grow-1">
+                            <span class="delivery-icon">💵</span>
+                            <span class="flex-grow-1" style="display:block;">
                                 <strong>Za pobraniem</strong>
-                                <p>Płatność przy odbiorze (+5 zł)</p>
-                            </div>
+                                <span style="display:block;font-size:.78rem;color:#6b7280;margin-top:2px;">Płatność przy odbiorze (+5 zł)</span>
+                            </span>
                         </label>
 
                     </div>
@@ -218,7 +218,7 @@
             <!-- PRAWA KOLUMNA / PODSUMOWANIE -->
             <div class="col-lg-4">
                 <div class="order-summary">
-                    <h5 class="fw-bold mb-3">Twoje zamówienie</h5>
+                    <h2 class="fw-bold mb-3" style="font-size:1rem;">Twoje zamówienie</h2>
 
                     <div class="order-item">
                         <span class="text-muted" style="font-size:.88rem;">GAN 356 M ×1</span>
